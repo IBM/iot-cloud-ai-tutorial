@@ -1,6 +1,6 @@
 # Placeholder
 
-## Setup IBM Cloud account
+## Set up IBM Cloud account
 
 In this section you will create a free account on [IBM Cloud](https://cloud.ibm.com/) which will allow you create your own applications, services, databases, etc. in the cloud. Any email address can be used to create a free account that has enough resources for the purposes of this tutorial. In case you have an email address issued by one of the registered academic institutions, you can ask for more resources through the [IBM Academic Initiative](https://www.ibm.com/academic).
 
@@ -19,7 +19,7 @@ In this section you will create a free account on [IBM Cloud](https://cloud.ibm.
     * In the new page, scroll down for **Subscription and feature codes** and click **Apply code**.
     * Enter your **IBM Cloud Feature Code** and click **Apply**.
 
-## Install Android Apps
+## Install Android apps
 
 In this section you will install the [IoTool](https://iotool.io/) app and its extensions on your Android phone. This app will read the sensor measurements and send them to IBM Cloud using the [MQTT](https://en.wikipedia.org/wiki/MQTT) protocol.
 
@@ -31,12 +31,11 @@ In this section you will install the [IoTool](https://iotool.io/) app and its ex
 1. Familiarize yourself with the app by following the on-screen tutorial.
 1. On the main app screen, where a 2x2 grid shows **AccelX**, **AccelY** and **AccelZ**, press the **Play** icon (triangle) on the top right to start a measurement. Move your phone and observe the numbers.
 1. Click the 3 boxes with the acceleration readings in **X**, **Y** and **Z** to enable a live graph. Move your phone and observe the live graph.
-1. Press the **Stop** icon (square) to stop the measurement.
+1. Press the **Stop** icon (square) on the top right to stop the measurement.
 1. Long press the empty box to the right of **AccelZ** and select **Accelerometer Absolute Value** under the **Device internal** drop-down menu. Click the **AccelAbs** box to enable it in the live graph.
 1. Press the **Play** icon (triangle) on the top right to start a new measurement. Observe that **AccelAbs** approximately corresponds to the norm of the acceleration `(AccelX, AccelY, AccelZ)` vector.
-1. Press the **Stop** icon (square) to stop the measurement.
-
-![IoTool-dashboard](assets/IoTool-dashboard.png)
+    * *Note*: Your screen should look [like this](../assets/IoTool-dashboard.png).
+1. Press the **Stop** icon (square) on the top right to stop the measurement.
 
 ## Create IBM Watson IoT Platform instance
 
@@ -44,10 +43,10 @@ In this section you will create an instance of the [IBM Watson IoT Platform](htt
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **Create resource** in the top right corner.
-1. In the **Services** tab, click the **Internet of Things** entry in menu on the left side.
+1. In the **Services** tab, pick the **Internet of Things** entry in menu on the left side.
 1. Click the [Internet of Things Platform](https://cloud.ibm.com/catalog/services/internet-of-things-platform) card.
 1. Select the following options and click **Create**.
-    * *Region*: Frankfurt.
+    * *Region*: Choose the one closest to your location.
     * *Plan*: Lite.
 1. In the next screen, click **Launch** to open the IBM Watson IoT Platform.
 1. In the **Browse Devices** screen, click on **Create a device**.
@@ -68,7 +67,7 @@ In this section you will create an instance of the [IBM Watson IoT Platform](htt
 
 In this section you will configure your Android phone to connect to your IoT Platform instance over MQTT using the IoTool app. The MQTT communication protocol works under the *publish-subscribe* model. Device(s) can *publish* (send) data onto a `topic` that other device(s) can *subscribe* (listen) to.
 
-1. On your Android phone, open the **IoTool**.
+1. On your Android phone, open the **IoTool** app.
 1. Open the **Drawer** by clicking the **Hamburger** icon (three horizontal lines) on the top left corner and choose **Settings**.
 1. In the **Settings** menu, choose **Cloud**.
 1. Make sure the **Use cloud**, **Send data** and **Sync after session** options are `ON`.
@@ -94,7 +93,7 @@ The `iot-2/evt/accel/fmt/json` MQTT topic string follows the format expected by 
 * `evt` stands for *event* and represents the MQTT message type. There are two types of message: **events** and **commands**. In a nutshell, *events* are messages about something that happened in the past and *commands* are messages that trigger an action that should happen in the future.
 * `accel` is the event ID string. This could be any string, but we chose `accel` because we are streaming *acceleration* data.
 * `fmt` stands for **format**.
-* `json` is the format string, which means that the message will be formatted in JSON.
+* `json` is the **format string**, which means that the message will be formatted in JSON.
 
 ## Monitor sensor data in the platform
 
@@ -119,9 +118,166 @@ In this section you will stream sensor data from your Android device to the clou
             }
     }
     ```
-1. Open the **State** tab, click the `>` icon to expand the contents of the `d` JSON object and observe the values changing in real time.
-1. Click the white arrow icon (:arrow_right:) on the right of the blue horizontal bar to see a different view on the same information in the **Device Drilldown** screen.
 
+1. Open the **State** tab, click the `>` icon to expand the contents of the `d` JSON object and observe the values changing in real time.
+1. Click the white arrow icon (:arrow_right:) on the right side of the blue horizontal bar to see a different view on the same information in the **Device Drilldown** screen.
+
+## Deploy Node-RED app
+
+In this section you will create a [Node-RED](https://nodered.org/) app using [IBM Cloud Starter Kits](https://cloud.ibm.com/docs/apps?topic=creating-apps-starter-kits). The deployment will be automated using the [Continuous Delivery](https://www.ibm.com/garage/method/practices/deliver/tool_continuous_delivery/) cloud service.
+
+1. Log in to [IBM Cloud](https://cloud.ibm.com/).
+1. Click **Create resource** in the top right corner.
+1. In the **Software** tab, pick the **Web and Application** entry in menu on the left side.
+1. Click the **Node-RED app** card and then the **Create app** button in the top right corner.
+1. Select the following options and click **Create**.
+    * *Region*: Choose the one closest to your location.
+    * *Plan*: Lite.
+1. Wait for the provision of the Cloudant service to finish.
+1. In the **App details** tab, click **Deploy your app** to configure the Continuous Delivery feature.
+1. Choose **IBM Cloud Foundry** as deployment target.
+1. Click the **New +** button and then **OK** to create an API key for your app.
+1. Set the **Region** to the one closest to your location.
+1. Click **Create** in the top right corner and wait while the code is deployed.
+1. When the **Status** field in the Delivery Pipeline card reads **Success**, the deployment is done.
+
+## Connect Node-RED app to IBM Watson IoT Platform
+
+In this section you will connect the recently deployed [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) application (i.e. your Node-RED app) to the Watson IoT Platform service. This will generate an API Key that will be used in the near future to authenticate your app.
+
+1. Log in to [IBM Cloud](https://cloud.ibm.com/).
+1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Expand the **Cloud Foundry apps** menu and click the name of the entry whose **Offering** reads `SDK for Node.js™`.
+1. Go to the **Connections** tab in the left side menu and click the **Create connection +** button in the top right corner.
+1. Locate the **Internet of Things Platform** entry and click the **Connect** button to the right.
+1. In the new screen, click **Connect** to accept the automatic generation of a new API Key.
+1. In the **Restage App** screen click the **Restage** button to reload the app with the new configuration.
+1. Wait until the marker in the top center turns green and reads **Running**.
+1. Go to the **Runtime** tab in the left side menu and click **Environment variables** in the centre of the screen.
+1. In the **VCAP_SERVICES** text box, you will find a big JSON object with two smaller objects (`iotf-service` and `cloudantNoSQLDB`), each one with their own `credentials` object.
+1. Look for the `credentials` object inside `iotf-service` and take note of its contents. You may copy and paste it somewhere else or **Export** the full JSON to a file.
+1. The `credentials` object in `iotf-service` should have, at least, the following fields:
+
+    ```JSON
+    "credentials": {
+        "apiKey": "API_KEY",
+        "apiToken": "API_TOKEN",
+        "http_host": "ORG_ID.internetofthings.ibmcloud.com",
+        "mqtt_host": "ORG_ID.messaging.internetofthings.ibmcloud.com",
+        "mqtt_s_port": 8883,
+        "mqtt_u_port": 1883,
+        "org": "ORG_ID"
+    }
+    ```
+
+   * *Note*: If your `credentials` object does not have these fields above, your are probably looking at the credentials for the `cloudantNoSQLDB` service.
+
+## Create a simple Node-RED app
+
+In this section you will develop a simple application using the Node-RED web IDE. The application will receive data streamed from the device via MQTT.
+
+1. Log in to [IBM Cloud](https://cloud.ibm.com/).
+1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
+1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
+1. Follow the instructions to protect your app from unwanted edits by providing a `username / password` pair. Click **Finish** when you are done.
+1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
+1. In the **Flow 1** editor tab, click and delete each one of the existing nodes to clear the screen.
+1. Click the **Hamburger** icon (three horizontal lines) in the top right corner and pick **Manage palette**.
+1. Go to the **Install** tab and search for `dashboard`.
+1. Find the `node-red-dashboard` package and click the **Install** button to the right. Confirm the installation by clicking **Install** again.
+1. Close the window to return to the **Flow 1** editor tab.
+1. In the node menu on the left, locate the `mqtt in` node under **Network**.
+1. Drag and drop the `mqtt in` node to the editor tab.
+1. Double-click the `mqtt in` node to open its configuration window.
+1. In the **Properties** tab of the **Edit mqtt in node** window, click the :pencil2: icon (pencil) next to the **Server** options to configure the MQTT broker.
+1. Fill in the **Connection** tab with the information below.
+    * *Server*: `ORG_ID.messaging.internetofthings.ibmcloud.com`, as in `credentials.mqtt_host`.
+    * *Port*: `8883`, as in `credentials.mqtt_s_port`.
+    * *Client ID*: `a:ORG_ID:APP_ID` (where `ORG_ID` is `credentials.org` and `APP_ID` can be any string).
+    * *Enable secure (SSL/TLS) connection*: `ON`.
+1. Click the :pencil2: icon (pencil) next to **TLS Configuration** and fill the next screen with the information below.
+    * *Verify server certificate*: `ON`.
+    * *Server Name*: `ORG_ID.messaging.internetofthings.ibmcloud.com`, as in `credentials.mqtt_host`.
+1. Click **Update** to close this window and return to the previous one.
+1. Go to the **Security** tab and fill the fields with the information retrieved from the `credentials` JSON object.
+    * *Username*: `API_KEY`, as in `credentials.apiKey`.
+    * *Password*: `API_TOKEN`, as in `credentials.apiToken`.
+1. Click **Update** to close this window and return to the previous one.
+1. Back to the **Properties** tab, fill the rest of the fields with the information below.
+    * *Topic*: `iot-2/type/DEV_TYPE/id/DEV_ID/evt/accel/fmt/json`.
+    * *QoS*: `2`.
+    * *Output*: `a parsed JSON object`.
+    * *Name*: `Subscribe to MQTT event`.
+1. Click **Done** to return to the flow editor.
+1. In the node menu on the left, locate the `debug` node under **Common**.
+1. Drag and drop the `debug` node to the editor tab.
+1. Double-click the `debug` node to open its configuration window.
+1. In the **Properties** tab of the **Edit debug node** window, change the **Output** field to `complete msg object`.
+1. Click **Done** to return to the flow editor.
+1. Click the gray circle on the right side of the `Subscribe to MQTT event` node and drag it to the gray circle on the left of the `msg` node. This will connect the two nodes.
+1. Click the **Deploy** button in the top right corner.
+1. In a few seconds a green marker should appear under the `Subscribe to MQTT event` node and display **connected** status.
+
+## Test simple Node-RED app
+
+In this section you will test the simple application you just developed. The application will display the streamed data in the debug console.
+
+1. Log in to [IBM Cloud](https://cloud.ibm.com/).
+1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
+1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
+1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
+1. Click the :beetle: icon (bug) in the top right corner to open the **Debug** tab.
+1. On your Android phone, open the **IoTool** app.
+1. In the app dashboard (main screen), press the **Play** icon (triangle) on the top right to start a measurement.
+1. On the Node-RED editor screen, note the JSON objects appearing periodically in the **Debug** tab on the right.
+1. Pick one JSON object and expand it to see its contents. You should see something similar to the example below.
+
+    ```JSON
+    {
+        "topic":"iot-2/type/DEV_TYPE/id/DEV_ID/evt/accel/fmt/json",
+        "payload":{
+            "d":{
+                "AccelerometerX@Device":-0.935272216796875,
+                "AccelerometerY@Device":5.72149658203125,
+                "AccelerometerZ@Device":7.0712890625,
+                "AccelerometerAbsolute@Device":9.14403555675171
+            }
+        },
+        "qos":2,
+        "retain":false,
+        "_msgid":"afb1c702.e3e838"
+    }
+    ```
+
+1. On your Android phone, press the **Stop** icon (square) on the top right to stop the measurement.
+1. Double-click the `debug` node to open its configuration window.
+1. In the **Properties** tab of the **Edit debug node** window, change the **Output** field to `msg.payload`.
+1. Click **Done** to return to the flow editor.
+1. Click the **Deploy** button in the top right corner.
+1. On your Android phone, press the **Play** icon (triangle) on the top right to start a measurement.
+1. On the Node-RED editor screen, note the JSON objects appearing periodically in the **Debug** tab on the right.
+1. Pick one JSON object and expand it to see its contents. You should see something similar to the example below.
+
+    ```JSON
+    {
+        "d":{
+            "AccelerometerX@Device":-0.935272216796875,
+            "AccelerometerY@Device":5.72149658203125,
+            "AccelerometerZ@Device":7.0712890625,
+            "AccelerometerAbsolute@Device":9.14403555675171
+        }
+    }
+    ```
+
+1. Note how it compares to the previous complete message object.
+
+## Create live dashboard with acceleration data
+
+## Enhance live dashboard with linear acceleration data
+
+## Add rudimentary shake detection to live dashboard
 
 ## Settings
 

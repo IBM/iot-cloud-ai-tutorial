@@ -36,13 +36,12 @@ and have some familiarity with
 1. Read [**Create live dashboard on Node-RED**](tutorial/4-DASHBOARD.md) and follow the steps.
     1. [Create live dashboard with acceleration data](tutorial/4-DASHBOARD.md#create-live-dashboard-with-acceleration-data)
 
+### To do
 
-
-Build dashboards
-
-Create IBM Watson Studio Project
-Create training data on Cloundant
-Train classifier model
-Test classifier model
-Deploy classifier model
-Consume classifier model
+* Finish dashboards
+* Create IBM Watson Studio Project
+* Create training data on Cloundant
+* Train classifier model
+* Test classifier model
+* Deploy classifier model
+* Consume classifier model

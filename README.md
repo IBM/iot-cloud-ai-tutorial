@@ -5,16 +5,16 @@ Integration of Internet of Things, Cloud Computing and Artificial Intelligence.
 ## Scope
 
 This tutorial will teach you how to connect IoT devices to the cloud and develop analytics models to analyse sensor data.
-By the end of this tutorial everyone should be able to set up their own IoT hub for streaming, storing and processing device data, besides gaining some familiarity with
+By the end of this tutorial everyone should be able to set up their own IoT hub for streaming, storing and processing device data, besides becoming familiar with
 
 * Node-RED
 * IBM Cloud
 * MQTT protocol
 * IBM Watson Studio
 * Cloundant database
-* IBM Watson IoT Platform
 * Continuous Delivery
 * Cloud Object Storage
+* IBM Watson IoT Platform
 * Application Starter Kits
 * Cloud Foundry applications
 

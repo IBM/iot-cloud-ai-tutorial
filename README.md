@@ -35,10 +35,12 @@ and have some familiarity with
     1. [Test simple Node-RED app](tutorial/3-NODERED.md#test-simple-node-red-app)
 1. Read [**Create live dashboard on Node-RED**](tutorial/4-DASHBOARD.md) and follow the steps.
     1. [Create live dashboard with acceleration data](tutorial/4-DASHBOARD.md#create-live-dashboard-with-acceleration-data)
+    1. [Enable linear acceleration sensors on your phone](tutorial/4-DASHBOARD.md#enable-linear-acceleration-sensors-on-your-phone)
+    1. [Enhance live dashboard with linear acceleration data](tutorial/4-DASHBOARD.md#enhance-live-dashboard-with-linear-acceleration-data)
+    1. [Add rudimentary shake detection to live dashboard](tutorial/4-DASHBOARD.md#add-rudimentary-shake-detection-to-live-dashboard)
 
 ### To do
 
-* Finish dashboards
 * Create IBM Watson Studio Project
 * Create training data on Cloundant
 * Train classifier model

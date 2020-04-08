@@ -53,6 +53,7 @@ In this section, you will create a live dashboard that will display the accelera
     * *Payload*: (json) `[]`.
     * *Topic*: `clear`.
     * *Name*: `Clear graph`.
+1. Click **Done** to return to the flow editor.
 1. Connect the `mqtt in` node called **Subscribe to MQTT event** to each one of the 3 `change` nodes called **Extract acceleration X/Y/Z**.
 1. Connect each one of the 3 `change` nodes called **Extract acceleration X/Y/Z** to the `chart` node called **Accelerometer**.
 1. Connect the `inject` node called **Clear graph** to the `chart` node called **Accelerometer**.
@@ -140,6 +141,7 @@ In this section, you will add a rudimentary shake detection feature to the dashb
     * *Name*: `Extract absolute acceleration`.
     * *Rule 1*: Set (msg) `payload` to (msg) `payload.d.AccelerometerAbsolute@Device`.
     * *Rule 2*: Set (msg) `topic` to (string) `abs(A)`.
+1. Click **Done** to return to the flow editor.
 1. In the node menu on the left of the **Flow 1** tab, locate the `switch` node under **Function**.
 1. Drag and drop the `switch` node to the editor tab.
 1. Double-click the `switch` node to open its configuration window.
@@ -147,6 +149,7 @@ In this section, you will add a rudimentary shake detection feature to the dashb
     * *Name*: `0.5g < abs(A) < 1.5g`.
     * *Rule 1*: Is between (number) `4.9` and (number) `14.7`.
     * *Rule 2*: Otherwise.
+1. Click **Done** to return to the flow editor.
 1. In the node menu on the left, locate the `gauge` node under **Dashboard**.
 1. Drag and drop the `gauge` node to the editor tab.
 1. Double-click the `gauge` node to open its configuration window.

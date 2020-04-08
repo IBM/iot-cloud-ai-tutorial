@@ -4,7 +4,7 @@ In this tutorial, you will create an account on IBM Cloud and install an applica
 
 ## Set up IBM Cloud account
 
-In this section you will create a free account on [IBM Cloud](https://cloud.ibm.com/) which will allow you create your own applications, services, databases, etc. in the cloud. Any email address can be used to create a free account that has enough resources for the purposes of this tutorial. In case you have an email address issued by one of the registered academic institutions, you can ask for more resources through the [IBM Academic Initiative](https://www.ibm.com/academic).
+In this section, you will create a free account on [IBM Cloud](https://cloud.ibm.com/) which will allow you create your own applications, services, databases, etc. in the cloud. Any email address can be used to create a free account that has enough resources for the purposes of this tutorial. In case you have an email address issued by one of the registered academic institutions, you can ask for more resources through the [IBM Academic Initiative](https://www.ibm.com/academic).
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/). If you do not have an account, [create one](https://cloud.ibm.com/registration) using your email address.
 1. (Optional) In case you have an email address issued by an academic institution, go to [IBM Academic Initiative](https://www.ibm.com/academic) portal.
@@ -23,7 +23,7 @@ In this section you will create a free account on [IBM Cloud](https://cloud.ibm.
 
 ## Install Android apps
 
-In this section you will install the [IoTool](https://iotool.io/) app and its extensions on your Android phone. This app will read the sensor measurements and send them to IBM Cloud using the [MQTT](https://en.wikipedia.org/wiki/MQTT) protocol.
+In this section, you will install the [IoTool](https://iotool.io/) app and its extensions on your Android phone. This app will read the sensor measurements and send them to IBM Cloud using the [MQTT](https://en.wikipedia.org/wiki/MQTT) protocol.
 
 1. On your Android phone, open the **Play Store** app, search for **"IoTool"** and install the following apps:
     * [IoTool - Internet of Things (IoT) sensor platform](https://play.google.com/store/apps/details?id=io.senlab.iotoolapp)
@@ -32,7 +32,7 @@ In this section you will install the [IoTool](https://iotool.io/) app and its ex
 1. Open the **IoTool** app and choose **allow** for every question it asks.
 1. Familiarize yourself with the app by following the on-screen tutorial.
 1. On the main app screen, where a 2x2 grid shows **AccelX**, **AccelY** and **AccelZ**, press the **Play** icon (triangle) on the top right to start a measurement. Move your phone and observe the numbers.
-1. Click the 3 boxes with the acceleration readings in **X**, **Y** and **Z** to enable a live graph. Move your phone and observe the live graph.
+1. Click the 3 boxes with the acceleration readings **AccelX**, **AccelY** and **AccelZ** to enable a live graph. Move your phone and observe the live graph.
 1. Press the **Stop** icon (square) on the top right to stop the measurement.
 1. Long press the empty box to the right of **AccelZ** and select **Accelerometer Absolute Value** under the **Device internal** drop-down menu. Click the **AccelAbs** box to enable it in the live graph.
 1. Press the **Play** icon (triangle) on the top right to start a new measurement. Observe that **AccelAbs** approximately corresponds to the norm of the acceleration `(AccelX, AccelY, AccelZ)` vector.

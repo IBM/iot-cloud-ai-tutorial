@@ -4,7 +4,7 @@ In this tutorial, you will create an instance of the IBM Watson IoT Platform ser
 
 ## Create IBM Watson IoT Platform instance
 
-In this section you will create an instance of the [IBM Watson IoT Platform](https://www.ibm.com/cloud/watson-iot-platform) service and register your Android device for secure communication over MQTT.
+In this section, you will create an instance of the [IBM Watson IoT Platform](https://www.ibm.com/cloud/watson-iot-platform) service and register your Android device for secure communication over MQTT.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **Create resource** in the top right corner.
@@ -30,7 +30,7 @@ In this section you will create an instance of the [IBM Watson IoT Platform](htt
 
 ## Connect your device to IBM Watson IoT Platform
 
-In this section you will configure your Android phone to connect to your IoT Platform instance over MQTT using the IoTool app. The MQTT communication protocol works under the *publish-subscribe* model. Device(s) can *publish* (send) data onto a `topic` that other device(s) can *subscribe* (listen) to.
+In this section, you will configure your Android phone to connect to your IoT Platform instance over MQTT using the IoTool app. The MQTT communication protocol works under the *publish-subscribe* model. Device(s) can *publish* (send) data onto a `topic` that other device(s) can *subscribe* (listen) to.
 
 1. On your Android phone, open the **IoTool** app.
 1. Open the **Drawer** by clicking the **Hamburger** icon (three horizontal lines) on the top left corner and choose **Settings**.
@@ -65,7 +65,7 @@ The `iot-2/evt/accel/fmt/json` MQTT topic string follows the format expected by 
 
 ## Monitor sensor data in the platform
 
-In this section you will stream sensor data from your Android device to the cloud and monitor its contents in the IBM Watson IoT Platform.
+In this section, you will stream sensor data from your Android device to the cloud and monitor its contents in the IBM Watson IoT Platform.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).

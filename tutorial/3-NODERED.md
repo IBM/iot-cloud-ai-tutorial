@@ -4,7 +4,7 @@ In this tutorial, you will deploy a Node-RED starter kit, connect it to IBM Wats
 
 ## Deploy Node-RED starter kit
 
-In this section you will create a [Node-RED](https://nodered.org/) app using [IBM Cloud Starter Kits](https://cloud.ibm.com/docs/apps?topic=creating-apps-starter-kits). The deployment will be automated using the [Continuous Delivery](https://www.ibm.com/garage/method/practices/deliver/tool_continuous_delivery/) cloud service.
+In this section, you will create a [Node-RED](https://nodered.org/) app using [IBM Cloud Starter Kits](https://cloud.ibm.com/docs/apps?topic=creating-apps-starter-kits). The deployment will be automated using the [Continuous Delivery](https://www.ibm.com/garage/method/practices/deliver/tool_continuous_delivery/) cloud service.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **Create resource** in the top right corner.
@@ -23,7 +23,7 @@ In this section you will create a [Node-RED](https://nodered.org/) app using [IB
 
 ## Connect Node-RED app to IBM Watson IoT Platform
 
-In this section you will connect the recently deployed [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) application (i.e. your Node-RED app) to the Watson IoT Platform service. This will generate an API Key that will be used in the near future to authenticate your app.
+In this section, you will connect the recently deployed [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) application (i.e. your Node-RED app) to the Watson IoT Platform service. This will generate an API Key that will be used in the near future to authenticate your app.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
@@ -54,7 +54,7 @@ In this section you will connect the recently deployed [Cloud Foundry](https://w
 
 ## Create a simple Node-RED app
 
-In this section you will develop a simple application using the Node-RED web IDE. The application will receive acceleration data streamed from the device via MQTT.
+In this section, you will develop a simple application using the Node-RED web IDE. The application will receive acceleration data streamed from the device via MQTT.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
@@ -98,7 +98,7 @@ In this section you will develop a simple application using the Node-RED web IDE
 
 ## Test simple Node-RED app
 
-In this section you will test the simple application you just created. The application will display the streamed data in the debug console.
+In this section, you will test the simple application you just created. The application will display the streamed data in the debug console.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).

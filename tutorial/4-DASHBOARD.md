@@ -33,19 +33,19 @@ In this section, you will create a live dashboard that will display the accelera
     * *Rule 1*: Set (msg) `payload` to (msg) `payload.d.AccelerometerZ@Device`.
     * *Rule 2*: Set (msg) `topic` to (string) `Z`.
 1. Click **Done** to return to the flow editor.
-1. In the node menu on the left, locate the `chart` node under **Function**.
+1. In the node menu on the left, locate the `chart` node under **Dashboard**.
 1. Drag and drop the `chart` node to the editor tab.
 1. Double-click the `chart` node to open its configuration window.
-1. In the **Properties** tab of the **Edit chart node** window, click the :pencil2: icon (pencil) next to the **Group** options.
-1. In the **Edit dashboard group node** window, fill the *Name* field with `Acceleration` and click the :pencil2: icon (pencil) next to the **Tab** options.
-1. In the **Edit dashboard tab node** window, fill the *Name* field with `Acceleration dashboard`.
-1. Click **Update** twice to close these windows and return to **Edit chart node**.
-1. Fill in the configuration with the information below.
+1. In the **Properties** tab of the **Edit chart node** window, fill in the configuration with the information below.
     * *Label*: `Accelerometer [m/s^2]`.
     * *Enlarge points*: `ON`.
     * *X-axis*: Last `2 minutes` or `200` points.
     * *legend*: `Show`.
     * *Name*: `Accelerometer`.
+1. Click the :pencil2: icon (pencil) next to the **Group** options.
+1. In the **Edit dashboard group node** window, fill the *Name* field with `Acceleration` and click the :pencil2: icon (pencil) next to the **Tab** options.
+1. In the **Edit dashboard tab node** window, fill the *Name* field with `Acceleration dashboard`.
+1. Click **Update** twice to close these windows and return to **Edit chart node**. Click **Done** to return to the flow editor.
 1. In the node menu on the left, locate the `inject` node under **Common**.
 1. Drag and drop the `inject` node to the editor tab.
 1. Double-click the `inject` node to open its configuration window.
@@ -82,7 +82,7 @@ In this section, you will add linear acceleration to the list of sensor measurem
 
 ## Enhance live dashboard with linear acceleration data
 
-In this section, you will add linear acceleration data to the live dashboard.
+In this section, you will add linear acceleration data to the live dashboard. You will learn how to copy, paste and edit existing nodes for better reuse of an existing flow.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
@@ -125,3 +125,57 @@ In this section, you will add linear acceleration data to the live dashboard.
 1. On your Android phone, press the **Stop** icon (square) on the top right to stop the measurement.
 
 ## Add rudimentary shake detection to live dashboard
+
+In this section, you will add a rudimentary shake detection feature to the dashboard using the absolute acceleration as a figure-of-merit. When a shake is detected, a notification will be displayed.
+
+1. Log in to [IBM Cloud](https://cloud.ibm.com/).
+1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
+1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
+1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
+1. In the node menu on the left of the **Flow 1** tab, locate the `change` node under **Function**.
+1. Drag and drop the `change` node to the editor tab.
+1. Double-click the `change` node to open its configuration window.
+1. In the **Properties** tab of the **Edit change node** window, enter the information below. To add new rules, click the `+ add` button in the bottom left of the window.
+    * *Name*: `Extract absolute acceleration`.
+    * *Rule 1*: Set (msg) `payload` to (msg) `payload.d.AccelerometerAbsolute@Device`.
+    * *Rule 2*: Set (msg) `topic` to (string) `abs(A)`.
+1. In the node menu on the left of the **Flow 1** tab, locate the `switch` node under **Function**.
+1. Drag and drop the `switch` node to the editor tab.
+1. Double-click the `switch` node to open its configuration window.
+1. In the **Properties** tab of the **Edit switch node** window, enter the information below. To add new rules, click the `+ add` button in the bottom left of the window.
+    * *Name*: `0.5g < abs(A) < 1.5g`.
+    * *Rule 1*: Is between (number) `4.9` and (number) `14.7`.
+    * *Rule 2*: Otherwise.
+1. In the node menu on the left, locate the `gauge` node under **Dashboard**.
+1. Drag and drop the `gauge` node to the editor tab.
+1. Double-click the `gauge` node to open its configuration window.
+1. In the **Properties** tab of the **Edit gauge node** window, fill in the configuration with the information below.
+    * *Label*: `Absolute acceleration`.
+    * *Value format*: `{{value | number:2}}`.
+    * *Units*: `m^2/s`.
+    * *Range*: min `0`, max `20`.
+    * *Colour radient*: `red - green - red`.
+    * *Sectors*: `0 - 4.9 - 14.7 - 20`.
+    * *Name*: `Absolute acceleration`.
+1. In the **Group** menu, select `Add new ui_group` and click the :pencil2: icon (pencil).
+1. In the **Add new dashboard group config node** window, fill the *Name* field with `Shake detection` and click **Update**.
+1. Click **Done** to return to the flow editor.
+1. In the node menu on the left, locate the `notification` node under **Dashboard**.
+1. Drag and drop the `notification` node to the editor tab.
+1. Double-click the `notification` node to open its configuration window.
+1. In the **Properties** tab of the **Edit notification node** window, fill in the configuration with the information below.
+    * *Topic*: `Shake detected!`.
+    * *Name*: `Shake notification`.
+1. Click **Done** to return to the flow editor.
+1. Connect the `mqtt in` node called **Subscribe to MQTT event** to the `change` node called **Extract absolute acceleration**.
+1. Connect the `change` node called **Extract absolute acceleration** to the `switch` node called **0.5g < abs(A) < 1.5g** and to the `gauge` node called **Absolute acceleration**.
+1. Connect the `Otherwise` (second) output of the `switch` node called **0.5g < abs(A) < 1.5g** to the `notification` node called **Shake notification**.
+1. Click the **Deploy** button in the top right corner.
+1. Click the :bar_chart: icon (graph) in the top right corner to open the **Dashboard** tab and click the :arrow_upper_right: icon (open in new window) in the top right corner, to open the Node-RED dashboard in a new window.
+    * *Note*: Your Node-RED flow should look [like this](../assets/notification-accel-flow.png).
+1. On your Android phone, open the **IoTool** app.
+1. In the app main screen, press the **Play** icon (triangle) on the top right to start a measurement.
+1. Shake your phone **gently**, at first, and then **vigorously**.
+1. On the Node-RED dashboard screen, observe both the absolute acceleration gauge meter and the notification in the top right corner whenever a shake is detected.
+1. On your Android phone, press the **Stop** icon (square) on the top right to stop the measurement.

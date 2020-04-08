@@ -38,12 +38,5 @@ and have some familiarity with
     1. [Enable linear acceleration sensors on your phone](tutorial/4-DASHBOARD.md#enable-linear-acceleration-sensors-on-your-phone)
     1. [Enhance live dashboard with linear acceleration data](tutorial/4-DASHBOARD.md#enhance-live-dashboard-with-linear-acceleration-data)
     1. [Add rudimentary shake detection to live dashboard](tutorial/4-DASHBOARD.md#add-rudimentary-shake-detection-to-live-dashboard)
-
-### To do
-
-* Create IBM Watson Studio Project
-* Create training data on Cloundant
-* Train classifier model
-* Test classifier model
-* Deploy classifier model
-* Consume classifier model
+1. Read [**Build an AI classifier using IBM Watson Studio**](tutorial/5-MODEL.md) and follow the steps.
+    1. [Create IBM Watson Studio project](tutorial/5-MODEL.md#create-ibm-watson-studio-project)

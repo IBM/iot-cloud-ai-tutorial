@@ -5,8 +5,7 @@ Integration of Internet of Things, Cloud Computing and Artificial Intelligence.
 ## Scope
 
 This tutorial will teach you how to connect IoT devices to the cloud and develop analytics models to analyse sensor data.
-By the end of this tutorial everyone should be able to set up your own IoT hub for handling data from devices, store and process
-and have some familiarity with
+By the end of this tutorial everyone should be able to set up their own IoT hub for streaming, storing and processing device data, besides gaining some familiarity with
 
 * Node-RED
 * IBM Cloud

@@ -110,6 +110,30 @@ In this section, you will create an empty project on [IBM Watson Studio](https:/
 1. Click **Create** on the bottom right.
 1. After a short loading time, you should see a Jupyter-like notebook in your screen.
 
+## Create Cloudant credentials for IBM Watson Studio
+
+In this section, you will create a service credential to allow your IBM Watson Studio project access the data stored in your Cloudant database.
+
+1. Log in to [IBM Cloud](https://cloud.ibm.com/).
+1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Expand the **Services** menu and click the name of the entry whose **Offering** reads `Cloudant`.
+    * *Note*: Do **not** click the **Cloud Foundry services** entry with the :link: icon after its name. This one is just an *alias* to the real **Service** entry.
+1. In the next screen, choose **Service credentials** from the menu on the left side.
+1. In the **Service credentials** window, click the **New credential +** button.
+1. In the **Add new credential** window, change the name to `Credentials-WS` to make it easier to keep track of where each credential is being used. Click **Add** to confirm.
+1. After a few seconds, a new entry should appear in the list. Click **View credentials** in the **Actions** column to display its contents.
+1. Make sure the JSON object has, at least, these **3 fields** below.
+
+    ```JSON
+    {
+        "host": "CLOUDANT_HOST",
+        "password": "CLOUDANT_PASSWORD",
+        "username": "CLOUDANT_USERNAME"
+    }
+    ```
+
+1. Copy the contents of the credentials JSON to a file for future use.
+
 ## Train classifier model
 
 In this section, ...

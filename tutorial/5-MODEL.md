@@ -71,6 +71,19 @@ In this section, you will create a Node-RED flow that stores the measured accele
 1. Shake your phone vigorously for **60 seconds**.
 1. On your Android phone, press the **Stop** icon (square) on the top right to stop the measurement.
 
+### Reset the training database
+
+**Warning: Do not perform these steps unless you have invalid data in your training database!!!**
+
+1. Log in to [IBM Cloud](https://cloud.ibm.com/).
+1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Expand the **Services** menu and click the name of the entry whose **Offering** reads `Cloudant`.
+    * *Note*: Do **not** click the **Cloud Foundry services** entry with the :link: icon after its name. This one is just an *alias* to the real **Service** entry.
+1. In the next screen, click **Launch Cloundant Dashboard**.
+1. In the **Databases** screen, locate the `training` database and click the rightmost trashbin icon in the **Actions** column.
+1. Enter `training` as the name of the database and click **Delete Database**.
+1. Redo the previous two steps to populate the training database with examples of both classes.
+
 ## Create IBM Watson Studio project
 
 In this section, you will create an empty project on [IBM Watson Studio](https://www.ibm.com/cloud/watson-studio) alongside its companion [Cloud Object Storage](https://www.ibm.com/br-pt/cloud/object-storage) service instance. You will create an empty notebook to delevop a classifier model.

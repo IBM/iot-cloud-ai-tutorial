@@ -50,6 +50,7 @@ In this section, we will create a Node-RED flow that stores the measured acceler
 1. Connect the `mqtt in` node called **Subscribe to MQTT event** to the `change` node called **Build complete JSON object**.
 1. Connect the `change` node called **Build complete JSON object** to the `debug` node called **msg.payload** and to the `cloudant out` node called **Training dataset**.
 1. Click the **Deploy** button in the top right corner.
+1. Make sure your Node-RED flow looks [like this](../assets/training-flow.png).
 
 ### Store class `0` examples in the training database
 

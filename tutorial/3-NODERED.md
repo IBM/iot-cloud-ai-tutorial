@@ -60,7 +60,8 @@ In this section, you will develop a simple application using the Node-RED web ID
 1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
 1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
 1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
-1. Follow the instructions to protect your app from unwanted edits by providing a `username / password` pair. Click **Finish** when you are done.
+1. Follow the instructions to protect your app from unwanted edits by defining a `username / password` pair. Click **Finish** when you are done.
+    * *Note*: Write down this `username / password` pair. You will need it in the future.
 1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
 1. In the **Flow 1** editor tab, click and delete each one of the existing nodes to clear the screen.
 1. In the node menu on the left, locate the `mqtt in` node under **Network**.

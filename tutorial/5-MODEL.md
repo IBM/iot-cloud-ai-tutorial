@@ -22,7 +22,7 @@ In this section, we will create a Node-RED flow that stores the measured acceler
     * *Rule 1*: Set (msg) `payload.class` to (number) `0`.
     * *Rule 2*: Set (msg) `payload` to the following (expression) content
 
-        ```JSON
+        ```Javascript
         msg.payload.{
             "time" : $millis(),
             "ax" : d."AccelerometerX@Device",

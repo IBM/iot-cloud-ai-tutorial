@@ -2,9 +2,9 @@
 
 In this tutorial, ...
 
-## Create training data on Cloundant
+## Store training data on Cloundant
 
-In this section, we will create a Node-RED flow that stores the measured acceleration data into a Cloudant database. The sensor data is labelled with a Boolean class identifier that represents whether the device was being shaken or not during data collection.
+In this section, we will create a Node-RED flow that stores the measured acceleration data into a Cloudant database. The sensor data is labelled with a Boolean `class` identifier that represents whether the device was being shaken or not during data collection.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
@@ -33,7 +33,7 @@ In this section, we will create a Node-RED flow that stores the measured acceler
             "laz" : d."LinearAccelerationZ@Device",
             "a" : d."AccelerometerAbsolute@Device"
         }
-        ````
+        ```
 
 1. Click **Done** to return to the flow editor.
 1. In the node menu on the left, locate the `debug` node under **Common**.
@@ -64,6 +64,7 @@ In this section, we will create a Node-RED flow that stores the measured acceler
 1. Double-click the `change` node called **Build complete JSON object** to open its configuration window.
 1. In the **Properties** tab of the **Edit change node** window, change first rule according to the instructions below.
     * *Rule 1*: Set (msg) `payload.class` to (number) `1`.
+1. Click the **Deploy** button in the top right corner.
 1. On your Android phone, open the **IoTool** app.
 1. In the app main screen, press the **Play** icon (triangle) on the top right to start a measurement.
 1. Shake your phone vigorously for **60 seconds**.

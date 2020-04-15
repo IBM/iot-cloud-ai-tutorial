@@ -4,7 +4,7 @@ In this tutorial, ...
 
 ## Store training data on Cloundant
 
-In this section, we will create a Node-RED flow that stores the measured acceleration data into a Cloudant database. The sensor data is labelled with a Boolean `class` identifier that represents whether the device was being shaken or not during data collection.
+In this section, you will create a Node-RED flow that stores the measured acceleration data into a Cloudant database. The sensor data is labelled with a Boolean `class` identifier that represents whether the device was being shaken or not during data collection.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
@@ -73,7 +73,29 @@ In this section, we will create a Node-RED flow that stores the measured acceler
 
 ## Create IBM Watson Studio project
 
-In this section, ...
+In this section, you will create an empty project on [IBM Watson Studio](https://www.ibm.com/cloud/watson-studio) alongside its companion [Cloud Object Storage](https://www.ibm.com/br-pt/cloud/object-storage) service instance. You will create an empty notebook to delevop a classifier model.
+
+1. Log in to [IBM Cloud](https://cloud.ibm.com/).
+1. Click **Create resource** in the top right corner.
+1. In the **Services** tab, pick the **AI** entry in menu on the left side.
+1. Click the [Watson Studio](https://cloud.ibm.com/catalog/services/watson-studio) card.
+1. Select the following options and then click **Create**.
+    * *Region*: Choose the one closest to your location.
+    * *Plan*: Lite.
+1. In the next screen, click **Get Started** to open the IBM Watson Studio.
+1. In the **Welcome** screen, click on **Create a project**.
+1. In the **Create a project** screen, click on **Create an empty project**.
+1. In the **New project** screen, you should configure your project by providing the information below.
+    * *Define project details*: Give it a name and a description of your choosing.
+    * *Define storage*: Choose an existing **Cloud Object Storage** (COS) service instance if you already have one. Otherwise, click **Add**. A new window will appear, in which you should select the **Lite** plan and then click **Create** and **Confirm**. Once you go back to the **New project** screen, click **Refresh** after a few moments to display the COS instance name.
+1. In the **New project** screen, finish the project creation by clicking **Create**.
+1. In the project overview page, click the **Add to project +** button on the top right.
+1. In the **Choose asset type** window, pick **Notebook**.
+1. In the **New notebook** screen, stay in the **Blank** tab and configure your notebook by providing the information below.
+    * *Name*: Give it a name of your choosing.
+    * *Select runtime*: `Default Spark Python 3.6 (Driver: 1 vCPU 4 GB RAM, 2 Executors: 1 vCPU 4 GB RAM)`.
+1. Click **Create** on the bottom right.
+1. After a short loading time, you should see a Jupyter-like notebook in your screen.
 
 ## Train classifier model
 

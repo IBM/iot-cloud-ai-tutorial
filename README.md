@@ -38,4 +38,10 @@ By the end of this tutorial everyone should be able to set up their own IoT hub 
     1. [Enhance live dashboard with linear acceleration data](tutorial/4-DASHBOARD.md#enhance-live-dashboard-with-linear-acceleration-data)
     1. [Add rudimentary shake detection to live dashboard](tutorial/4-DASHBOARD.md#add-rudimentary-shake-detection-to-live-dashboard)
 1. Read [**Build an AI classifier using IBM Watson Studio**](tutorial/5-MODEL.md) and follow the steps.
+    1. [Store training data on Cloundant](tutorial/5-MODEL.md#store-training-data-on-cloundant)
     1. [Create IBM Watson Studio project](tutorial/5-MODEL.md#create-ibm-watson-studio-project)
+    1. [Create Cloudant credentials for IBM Watson Studio](tutorial/5-MODEL.md#create-cloudant-credentials-for-ibm-watson-studio)
+    1. [Train classifier model](tutorial/5-MODEL.md#train-classifier-model)
+    1. [Test classifier model](tutorial/5-MODEL.md#test-classifier-model)
+    1. [Deploy classifier model](tutorial/5-MODEL.md#deploy-classifier-model)
+    1. [Consume classifier model](tutorial/5-MODEL.md#consume-classifier-model)

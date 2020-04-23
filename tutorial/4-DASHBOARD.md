@@ -7,7 +7,7 @@ In this tutorial, you will create a live dashboard to display device acceleratio
 In this section, you will create a live dashboard that will display the acceleration data streamed from the device in real-time. You will learn how to manipulate of the original `msg` object to extract the relevant information to be passed along to the dashboard nodes.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
-1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
 1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
 1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
 1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
@@ -86,7 +86,7 @@ In this section, you will add linear acceleration to the list of sensor measurem
 In this section, you will add linear acceleration data to the live dashboard. You will learn how to copy, paste and edit existing nodes for better reuse of an existing flow.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
-1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
 1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
 1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
 1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
@@ -130,7 +130,7 @@ In this section, you will add linear acceleration data to the live dashboard. Yo
 In this section, you will add a rudimentary shake detection feature to the dashboard using the absolute acceleration as a figure-of-merit. When a shake is detected, a notification will be displayed.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
-1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
 1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
 1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
 1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.

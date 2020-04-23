@@ -7,8 +7,8 @@ In this tutorial, you will create an instance of the IBM Watson IoT Platform ser
 In this section, you will create an instance of the [IBM Watson IoT Platform](https://www.ibm.com/cloud/watson-iot-platform) service and register your Android device for secure communication over MQTT.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
-1. Click **Create resource** in the top right corner.
-1. In the **Services** tab, pick the **Internet of Things** entry in menu on the left side.
+1. Click **Create resource +** in the top right corner.
+1. In the **Services** menu on the left, select the **Internet of Things** category.
 1. Click the [Internet of Things Platform](https://cloud.ibm.com/catalog/services/internet-of-things-platform) card.
 1. Select the following options and click **Create**.
     * *Region*: Choose the one closest to your location.
@@ -68,7 +68,7 @@ The `iot-2/evt/accel/fmt/json` MQTT topic string follows the format expected by 
 In this section, you will stream sensor data from your Android device to the cloud and monitor its contents in the IBM Watson IoT Platform.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
-1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
 1. Expand the **Services** menu and click the name of the entry whose **Offering** reads `Internet of Things Platform`.
     * *Note*: Do **not** click the **Cloud Foundry services** entry with the :link: icon after its name. This one is just an *alias* to the real **Service** entry.
 1. In the next screen, click **Launch** to open the IBM Watson IoT Platform.

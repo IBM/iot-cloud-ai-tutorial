@@ -7,9 +7,9 @@ In this tutorial, you will deploy a Node-RED starter kit, connect it to IBM Wats
 In this section, you will create a [Node-RED](https://nodered.org/) app using [IBM Cloud Starter Kits](https://cloud.ibm.com/docs/apps?topic=creating-apps-starter-kits). The deployment will be automated using the [Continuous Delivery](https://www.ibm.com/garage/method/practices/deliver/tool_continuous_delivery/) cloud service.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
-1. Click **Create resource** in the top right corner.
-1. In the **Software** tab, pick the **Web and Application** entry in menu on the left side.
-1. Click the **Node-RED app** card and then the **Create app** button in the top right corner.
+1. Click **Create resource +** in the top right corner.
+1. In the **Software** menu on the left, select the **Web and Application** category.
+1. Click the **Node-RED app** card and then the **Get started** button in the bottom of the page.
 1. Select the following options and click **Create**.
     * *Region*: Choose the one closest to your location.
     * *Plan*: Lite.
@@ -26,7 +26,7 @@ In this section, you will create a [Node-RED](https://nodered.org/) app using [I
 In this section, you will connect the recently deployed [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) application (i.e. your Node-RED app) to the Watson IoT Platform service. This will generate an API Key that will be used in the near future to authenticate your app.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
-1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
 1. Expand the **Cloud Foundry apps** menu and click the name of the entry whose **Offering** reads `SDK for Node.js™`.
 1. Go to the **Connections** tab in the left side menu and click the **Create connection +** button in the top right corner.
 1. Locate the **Internet of Things Platform** entry and click the **Connect** button to the right.
@@ -57,7 +57,7 @@ In this section, you will connect the recently deployed [Cloud Foundry](https://
 In this section, you will develop a simple application using the Node-RED web IDE. The application will receive acceleration data streamed from the device via MQTT.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
-1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
 1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
 1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
 1. Follow the instructions to protect your app from unwanted edits by defining a `username / password` pair. Click **Finish** when you are done.
@@ -102,7 +102,7 @@ In this section, you will develop a simple application using the Node-RED web ID
 In this section, you will test the simple application you just created. The application will display the streamed data in the debug console.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
-1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
 1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
 1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
 1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.

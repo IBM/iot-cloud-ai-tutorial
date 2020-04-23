@@ -7,7 +7,7 @@ In this tutorial, ...
 In this section, you will create a Node-RED flow that stores the measured acceleration data into a Cloudant database. The sensor data is labelled with a Boolean `class` identifier that represents whether the device was being shaken or not during data collection.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
-1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
 1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
 1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
 1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
@@ -76,7 +76,7 @@ In this section, you will create a Node-RED flow that stores the measured accele
 **Warning: Do not perform these steps unless you have invalid data in your training database!!!**
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
-1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
 1. Expand the **Services** menu and click the name of the entry whose **Offering** reads `Cloudant`.
     * *Note*: Do **not** click the **Cloud Foundry services** entry with the :link: icon after its name. This one is just an *alias* to the real **Service** entry.
 1. In the next screen, click **Launch Cloundant Dashboard**.
@@ -89,8 +89,8 @@ In this section, you will create a Node-RED flow that stores the measured accele
 In this section, you will create an empty project on [IBM Watson Studio](https://www.ibm.com/cloud/watson-studio) alongside its companion [Cloud Object Storage](https://www.ibm.com/br-pt/cloud/object-storage) service instance. You will create an empty notebook to delevop a classifier model.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
-1. Click **Create resource** in the top right corner.
-1. In the **Services** tab, pick the **AI** entry in menu on the left side.
+1. Click **Create resource +** in the top right corner.
+1. In the **Services** menu on the left, select the **AI** category.
 1. Click the [Watson Studio](https://cloud.ibm.com/catalog/services/watson-studio) card.
 1. Select the following options and then click **Create**.
     * *Region*: Choose the one closest to your location.
@@ -115,7 +115,7 @@ In this section, you will create an empty project on [IBM Watson Studio](https:/
 In this section, you will create a service credential to allow your IBM Watson Studio project access the data stored in your Cloudant database.
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
-1. Click **View resources** to open your [Resource list](https://cloud.ibm.com/resources).
+1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
 1. Expand the **Services** menu and click the name of the entry whose **Offering** reads `Cloudant`.
     * *Note*: Do **not** click the **Cloud Foundry services** entry with the :link: icon after its name. This one is just an *alias* to the real **Service** entry.
 1. In the next screen, choose **Service credentials** from the menu on the left side.

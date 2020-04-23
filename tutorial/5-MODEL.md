@@ -121,7 +121,7 @@ In this section, you will create a service credential to allow your IBM Watson S
 1. In the next screen, choose **Service credentials** from the menu on the left side.
 1. In the **Service credentials** window, click the **New credential +** button.
 1. In the **Add new credential** window, change the name to `Credentials-WS` to make it easier to keep track of where each credential is being used. Click **Add** to confirm.
-1. After a few seconds, a new entry should appear in the list. Click **View credentials** in the **Actions** column to display its contents.
+1. After a few seconds, a new entry should appear in the list. Click the twistie `>` to display its contents.
 1. Make sure the JSON object has, at least, these **3 fields** below.
 
     ```JSON
@@ -136,7 +136,104 @@ In this section, you will create a service credential to allow your IBM Watson S
 
 ## Train classifier model
 
-In this section, ...
+In this section, your will load the sensor data from Cloudant into a [Pandas](https://pandas.pydata.org/) `DataFrame` and use [PySpark](https://spark.apache.org/docs/latest/api/python/index.html) machine learning functions to train a logistic regression classifier model.
+
+1. Log in to [IBM Cloud](https://cloud.ibm.com/).
+1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
+1. Expand the **Services** menu and click the name of the entry whose **Offering** reads `Watson Studio`.
+1. In the next screen, click **Get Started** to open the IBM Watson Studio.
+1. In the **Welcome** screen, click on your project name in the **Recently updated projects** card.
+1. Go to the **Assets** tab, and click the name of your notebook in the **Notebooks** card.
+1. In the notebook visualisation screen, click the :pencil2: icon (pencil) in the top horizontal bar to enable editing.
+1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to install the [SQL-Cloundant Connector](https://developer.ibm.com/clouddataservices/docs/ibm-data-science-experience/integrate/use-python-notebook-to-load-cloudant-data-into-spark/).
+
+    ```Python
+    import pixiedust
+    pixiedust.installPackage("org.apache.bahir:spark-sql-cloudant_2.11:0")
+    ```
+
+1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to instantiate and start a Spark session.
+
+    ```Python
+    from pyspark.sql import SparkSession
+    spark = SparkSession.builder.getOrCreate()
+    ```
+
+1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to define the reader function. The `host`, `username` and `password` variables are those defined in the `Credentials-WS` JSON file.
+
+    ```Python
+    def readDataFrameFromCloudant(database):
+
+        cloudantdata = spark.read.format("org.apache.bahir.cloudant")\
+            .option("cloudant.host",'CLOUDANT_HOST')\
+            .option("cloudant.username", 'CLOUDANT_USERNAME')\
+            .option("cloudant.password",'CLOUDANT_PASSWORD')\
+            .load(database)
+
+        return cloudantdata
+    ```
+
+1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to load the data from Cloudant and display the class breakdown.
+    * *Note*: It is desirable to have approximately the same number of entries for each class.
+
+    ```Python
+    df = readDataFrameFromCloudant('training')
+    df.createOrReplaceTempView('df')
+    spark.sql('select class, count(class) from df group by class').show()
+    ```
+
+1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to display the dataset contents.
+    * *Note*: Use the **Search table** text field to search for `NaN`.
+
+    ```Python
+    display(df)
+    ```
+
+1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to import the machine learning libraries.
+
+    ```Python
+    from pyspark.ml.feature import StringIndexer, OneHotEncoder
+    from pyspark.ml.linalg import Vectors
+    from pyspark.ml.feature import VectorAssembler
+    from pyspark.ml.feature import Normalizer
+    from pyspark.ml import Pipeline
+    from pyspark.ml.classification import LogisticRegression
+    from pyspark.ml.evaluation import MulticlassClassificationEvaluator
+    ```
+
+1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to train the machine learning model.
+
+    ```Python
+    vectorAssembler = VectorAssembler(inputCols=["a","ax","ay","az","lax","lay","laz"], outputCol="features")
+    lr = LogisticRegression(maxIter=1000).setLabelCol("class")
+    pipeline = Pipeline(stages=[vectorAssembler, lr ])
+    model = pipeline.fit(df)
+    result = model.transform(df)
+    ```
+
+1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to print the parameters of the trained model.
+
+    ```Python
+    print('Intercept = ', model.stages[1].intercept)
+    print('Coefficients = ', model.stages[1].coefficients)
+    ```
+
+1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to evaluate the classification accuracy.
+
+    ```Python
+    binEval = MulticlassClassificationEvaluator().setMetricName("accuracy").setPredictionCol("prediction").setLabelCol("class")
+    binEval.evaluate(result)
+    ```
+
+1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to verify the classification predictions.
+
+    ```Python
+    new_df = readDataFrameFromCloudant('training')
+    new_df.createOrReplaceTempView('new_df')
+    result = model.transform(new_df)
+    result.createOrReplaceTempView('result')
+    spark.sql("select a, ax, ay, az, lax, lay, laz, class, prediction from result").show(50)
+    ```
 
 ## Test classifier model
 

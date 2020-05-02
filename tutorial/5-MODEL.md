@@ -145,21 +145,21 @@ In this section, your will load the sensor data from Cloudant into a [Pandas](ht
 1. In the **Welcome** screen, click on your project name in the **Recently updated projects** card.
 1. Go to the **Assets** tab, and click the name of your notebook in the **Notebooks** card.
 1. In the notebook visualisation screen, click the :pencil2: icon (pencil) in the top horizontal bar to enable editing.
-1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to install the [SQL-Cloundant Connector](https://developer.ibm.com/clouddataservices/docs/ibm-data-science-experience/integrate/use-python-notebook-to-load-cloudant-data-into-spark/).
+1. In an empty cell, paste and execute (with `Shift+Enter`) the Python code below to install the [SQL-Cloundant Connector](https://developer.ibm.com/clouddataservices/docs/ibm-data-science-experience/integrate/use-python-notebook-to-load-cloudant-data-into-spark/).
 
     ```Python
     import pixiedust
     pixiedust.installPackage("org.apache.bahir:spark-sql-cloudant_2.11:0")
     ```
 
-1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to instantiate and start a Spark session.
+1. In an empty cell, paste and execute the Python code below to instantiate and start a Spark session.
 
     ```Python
     from pyspark.sql import SparkSession
     spark = SparkSession.builder.getOrCreate()
     ```
 
-1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to define the reader function. The `host`, `username` and `password` variables are those defined in the `Credentials-WS` JSON file.
+1. In an empty cell, paste and execute the Python code below to define the reader function. The `CLOUDANT_HOST`, `CLOUDANT_USERNAME` and `CLOUDANT_PASSWORD` variables are those defined in the `Credentials-WS` JSON file.
 
     ```Python
     def readDataFrameFromCloudant(database):
@@ -173,7 +173,7 @@ In this section, your will load the sensor data from Cloudant into a [Pandas](ht
         return cloudantdata
     ```
 
-1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to load the data from Cloudant and display the class breakdown.
+1. In an empty cell, paste and execute the Python code below to load the data from Cloudant and display the class breakdown.
     * *Note*: It is desirable to have approximately the same number of entries for each class.
 
     ```Python
@@ -182,14 +182,14 @@ In this section, your will load the sensor data from Cloudant into a [Pandas](ht
     spark.sql('select class, count(class) from df group by class').show()
     ```
 
-1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to display the dataset contents.
+1. In an empty cell, paste and execute the Python code below to display the dataset contents.
     * *Note*: Use the **Search table** text field to search for `NaN`.
 
     ```Python
     display(df)
     ```
 
-1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to import the machine learning libraries.
+1. In an empty cell, paste and execute the Python code below to import the machine learning libraries.
 
     ```Python
     from pyspark.ml.feature import StringIndexer, OneHotEncoder
@@ -201,7 +201,7 @@ In this section, your will load the sensor data from Cloudant into a [Pandas](ht
     from pyspark.ml.evaluation import MulticlassClassificationEvaluator
     ```
 
-1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to train the machine learning model.
+1. In an empty cell, paste and execute the Python code below to train the machine learning model.
 
     ```Python
     vectorAssembler = VectorAssembler(inputCols=["a","ax","ay","az","lax","lay","laz"], outputCol="features")
@@ -211,21 +211,21 @@ In this section, your will load the sensor data from Cloudant into a [Pandas](ht
     result = model.transform(df)
     ```
 
-1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to print the parameters of the trained model.
+1. In an empty cell, paste and execute the Python code below to print the parameters of the trained model.
 
     ```Python
     print('Intercept = ', model.stages[1].intercept)
     print('Coefficients = ', model.stages[1].coefficients)
     ```
 
-1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to evaluate the classification accuracy.
+1. In an empty cell, paste and execute the Python code below to evaluate the classification accuracy.
 
     ```Python
     binEval = MulticlassClassificationEvaluator().setMetricName("accuracy").setPredictionCol("prediction").setLabelCol("class")
     binEval.evaluate(result)
     ```
 
-1. In an empty cell, paste and execute (`Shift+Enter`) the Python code below to verify the classification predictions.
+1. In an empty cell, paste and execute the Python code below to verify the classification predictions.
 
     ```Python
     new_df = readDataFrameFromCloudant('training')

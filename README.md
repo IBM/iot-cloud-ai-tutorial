@@ -43,5 +43,5 @@ By the end of this tutorial everyone should be able to set up their own IoT hub 
     1. [Create Cloudant credentials for IBM Watson Studio](tutorial/5-MODEL.md#create-cloudant-credentials-for-ibm-watson-studio)
     1. [Train classifier model](tutorial/5-MODEL.md#train-classifier-model)
     1. [Test classifier model](tutorial/5-MODEL.md#test-classifier-model)
-    1. [Deploy classifier model](tutorial/5-MODEL.md#deploy-classifier-model)
-    1. [Consume classifier model](tutorial/5-MODEL.md#consume-classifier-model)
+    <!-- 1. [Deploy classifier model](tutorial/5-MODEL.md#deploy-classifier-model) -->
+    <!-- 1. [Consume classifier model](tutorial/5-MODEL.md#consume-classifier-model) -->

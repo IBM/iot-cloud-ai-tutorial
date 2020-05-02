@@ -313,10 +313,10 @@ In this section, you will translate the trained classifier model into a [Javascr
 1. On the Node-RED dashboard screen, observe both the **Classifier model** gauge meter and the notification in the bottom right corner whenever a shake is detected.
 1. On your Android phone, press the **Stop** icon (square) on the top right to stop the measurement.
 
-## Deploy classifier model
+<!-- ## Deploy classifier model
 
-In this section, ...
+In this section, ... -->
 
-## Consume classifier model
+<!-- ## Consume classifier model
 
-In this section, ...
+In this section, ... -->

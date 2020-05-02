@@ -60,6 +60,9 @@ In this section, you will create a live dashboard that will display the accelera
 1. Click the **Deploy** button in the top right corner.
 1. Click the :bar_chart: icon (graph) in the top right corner to open the **Dashboard** tab and click the :arrow_upper_right: icon (open in new window) in the top right corner, to open the Node-RED dashboard in a new window.
     * *Note*: Your Node-RED flow should look [like this](../assets/accel-flow.png).
+
+### Try it out: live dashboard
+
 1. On your Android phone, open the **IoTool** app.
 1. In the app main screen, press the **Play** icon (triangle) on the top right to start a measurement.
 1. On the Node-RED dashboard screen, note the acceleration measurements appearing periodically in the chart.
@@ -119,6 +122,9 @@ In this section, you will add linear acceleration data to the live dashboard. Yo
 1. Click the **Deploy** button in the top right corner.
 1. Click the :bar_chart: icon (graph) in the top right corner to open the **Dashboard** tab and click the :arrow_upper_right: icon (open in new window) in the top right corner, to open the Node-RED dashboard in a new window.
     * *Note*: Your Node-RED flow should look [like this](../assets/linear-accel-flow.png).
+
+### Try it out: enhanced live dashboard
+
 1. On your Android phone, open the **IoTool** app.
 1. In the app main screen, press the **Play** icon (triangle) on the top right to start a measurement.
 1. Place your phone on a table and slide it laterally.
@@ -177,8 +183,11 @@ In this section, you will add a rudimentary shake detection feature to the dashb
 1. Click the **Deploy** button in the top right corner.
 1. Click the :bar_chart: icon (graph) in the top right corner to open the **Dashboard** tab and click the :arrow_upper_right: icon (open in new window) in the top right corner, to open the Node-RED dashboard in a new window.
     * *Note*: Your Node-RED flow should look [like this](../assets/notification-accel-flow.png).
+
+### Try it out: rudimentary shake detection
+
 1. On your Android phone, open the **IoTool** app.
 1. In the app main screen, press the **Play** icon (triangle) on the top right to start a measurement.
 1. Shake your phone **gently**, at first, and then **vigorously**.
-1. On the Node-RED dashboard screen, observe both the absolute acceleration gauge meter and the notification in the top right corner whenever a shake is detected.
+1. On the Node-RED dashboard screen, observe both the **Absolute acceleration** gauge meter and the notification in the top right corner whenever a shake is detected.
 1. On your Android phone, press the **Stop** icon (square) on the top right to stop the measurement.

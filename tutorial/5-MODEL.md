@@ -214,8 +214,8 @@ In this section, your will load the sensor data from Cloudant into a [Pandas](ht
 1. In an empty cell, paste and execute the Python code below to print the parameters of the trained model.
 
     ```Python
-    print('Intercept = ', model.stages[1].intercept)
-    print('Coefficients = ', model.stages[1].coefficients)
+    print('intercept = ', model.stages[1].intercept)
+    print('coefficients = ', model.stages[1].coefficients)
     ```
 
 1. In an empty cell, paste and execute the Python code below to evaluate the classification accuracy.

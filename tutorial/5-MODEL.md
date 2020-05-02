@@ -237,7 +237,81 @@ In this section, your will load the sensor data from Cloudant into a [Pandas](ht
 
 ## Test classifier model
 
-In this section, ...
+In this section, you will translate the trained classifier model into a [Javascript](https://www.javascript.com/) function and use it to add a shake detection probability visualisation to your Node-RED dashboard.
+
+1. Log in to [IBM Cloud](https://cloud.ibm.com/).
+1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
+1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
+1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
+1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
+1. In the **Flow 2** tab, delete the connection between the `change` node called **Build complete JSON object** and the `cloudant out` node called **Training dataset**. This will prevent the next measurements from being stored in the Cloudant databse.
+1. In the node menu on the left of the **Flow 2** tab, locate the `function` node under **Function**.
+1. Drag and drop the `function` node to the editor tab.
+1. Double-click the `function` node to open its configuration window.
+1. In the **Properties** tab of the **Edit function node** window, enter the information below.
+    * *Name*: `Apply classification model`.
+    * *Function*: Enter the Javascript code below, replacing the empty brackets "`__`" by the floating-point numbers printed in the notebook.
+
+        ```Javascript
+        const intercept =  __;
+        const coefficients = new Float32Array([__,__,__,__,__,__,__]);
+
+        const x = intercept +
+                  coefficients[0] * msg.payload.d["AccelerometerAbsolute@Device"] +
+                  coefficients[1] * msg.payload.d["AccelerometerX@Device"] +
+                  coefficients[2] * msg.payload.d["AccelerometerY@Device"] +
+                  coefficients[3] * msg.payload.d["AccelerometerZ@Device"] +
+                  coefficients[4] * msg.payload.d["LinearAccelerationX@Device"] +
+                  coefficients[5] * msg.payload.d["LinearAccelerationY@Device"] +
+                  coefficients[6] * msg.payload.d["LinearAccelerationZ@Device"];
+
+        msg.payload = 100.0 / (1.0 + Math.exp(-x));
+
+        return msg;
+        ```
+
+1. Click **Done** to return to the flow editor.
+1. In the **Flow 1** tab, click the `gauge` node called **Absolute acceleration** and press the keyboard shortcut associated with **Copy** in your operational system (`Ctrl+C` or `Cmd+C`). A pop-up message will confirm that 1 node was copied successfully.
+1. In the **Flow 2** tab, press the keyboard shortcut associated with **Paste** in your operational system (`Ctrl+V` or `Cmd+V`). Move your cursor to place the node in an empty area and confirm with a mouse click. A pop-down message will confirm that 1 node was imported successfully.
+1. Double-click the `gauge` node to open its configuration window.
+1. In the **Properties** tab of the **Edit gauge node** window, change the configuration using the information below.
+    * *Label*: `Classifier model`.
+    * *Units*: `%`.
+    * *Range*: min `0`, max `100`.
+    * *Colour radient*: `red - yellow - red`.
+    * *Sectors*: `0 - 45 - 55 - 100`.
+    * *Name*: `Classifier model`.
+1. Click **Done** to return to the flow editor.
+1. In the node menu on the left of the **Flow 2** tab, locate the `switch` node under **Function**.
+1. Drag and drop the `switch` node to the editor tab.
+1. Double-click the `switch` node to open its configuration window.
+1. In the **Properties** tab of the **Edit switch node** window, enter the information below. To add new rules, click the `+ add` button in the bottom left of the window.
+    * *Name*: `Probability > 50%`.
+    * *Rule 1*: `>` (number) `50`.
+    * *Rule 2*: Otherwise.
+1. Click **Done** to return to the flow editor.
+1. In the node menu on the left of the **Flow 2** tab, locate the `notification` node under **Dashboard**.
+1. Drag and drop the `notification` node to the editor tab.
+1. Double-click the `notification` node to open its configuration window.
+1. In the **Properties** tab of the **Edit notification node** window, fill in the configuration with the information below.
+    * *Layout*: `Bottom right`.
+    * *Topic*: `Shake detected by classifier!`.
+    * *Name*: `Classifier notification`.
+1. Click **Done** to return to the flow editor.
+1. Connect the `mqtt in` node called **Subscribe to MQTT event** to the `function` node called **Apply classification model**.
+1. Connect the `function` node called **Apply classification model** to the `gauge` node called **Classifier model** and to the `switch` node called **Probability > 50%**.
+1. Connect the `> 50` (first) output of the `switch` node called **Probability > 50%** to the `notification` node called **Classifier notification**.
+1. Click the **Deploy** button in the top right corner.
+1. Click the :bar_chart: icon (graph) in the top right corner to open the **Dashboard** tab and click the :arrow_upper_right: icon (open in new window) in the top right corner, to open the Node-RED dashboard in a new window.
+    * *Note*: Your Node-RED flow should look [like this](../assets/classifier-accel-flow.png).
+
+### Try it out: classifier model
+
+1. On your Android phone, open the **IoTool** app.
+1. In the app main screen, press the **Play** icon (triangle) on the top right to start a measurement.
+1. Leave your phone on the table, at first, and then pick it up and shake it.
+1. On the Node-RED dashboard screen, observe both the **Classifier model** gauge meter and the notification in the bottom right corner whenever a shake is detected.
+1. On your Android phone, press the **Stop** icon (square) on the top right to stop the measurement.
 
 ## Deploy classifier model
 

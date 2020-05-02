@@ -250,7 +250,7 @@ In this section, you will translate the trained classifier model into a [Javascr
 1. Double-click the `function` node to open its configuration window.
 1. In the **Properties** tab of the **Edit function node** window, enter the information below.
     * *Name*: `Apply classification model`.
-    * *Function*: Enter the Javascript code below, replacing the empty brackets "`__`" by the floating-point numbers printed in the notebook.
+    * *Function*: Enter the Javascript code below, replacing the blanks "`__`" by the floating-point numbers printed in the notebook.
 
         ```Javascript
         const intercept =  __;

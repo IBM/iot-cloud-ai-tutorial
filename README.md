@@ -2,10 +2,10 @@
 
 Integration of Internet of Things, Cloud Computing and Artificial Intelligence.
 
-## Scope
+## Introduction
 
-This tutorial will teach you how to connect IoT devices to the cloud and develop analytics models to analyse sensor data.
-By the end of this tutorial everyone should be able to set up their own IoT hub for streaming, storing and processing device data, besides becoming familiar with
+This tutorial will teach you how to connect an Android device to the cloud and develop analytics models to analyse sensor data.
+By the end of this tutorial you should be able to set up your own IoT hub for streaming, storing and processing device data, besides becoming familiar with
 
 * Node-RED
 * IBM Cloud
@@ -18,7 +18,16 @@ By the end of this tutorial everyone should be able to set up their own IoT hub 
 * Application Starter Kits
 * Cloud Foundry applications
 
-## Instructions
+## Prerequisites
+
+* Android smartphone
+* Internet connection
+
+## Estimated time
+
+From 1h to 2h, depending on the familiarity of the reader with the concepts.
+
+## Steps
 
 1. Read [**Create IBM Cloud account and install IoTool apps**](tutorial/1-SETUP.md) and follow the steps.
     1. [Set up IBM Cloud account](tutorial/1-SETUP.md#set-up-ibm-cloud-account)
@@ -45,3 +54,12 @@ By the end of this tutorial everyone should be able to set up their own IoT hub 
     1. [Test classifier model](tutorial/5-MODEL.md#test-classifier-model)
     <!-- 1. [Deploy classifier model](tutorial/5-MODEL.md#deploy-classifier-model) -->
     <!-- 1. [Consume classifier model](tutorial/5-MODEL.md#consume-classifier-model) -->
+
+## Summary
+
+Congratulations, you have now built your own IoT hub for streaming, storing and analysing sensor data entirely on the cloud!
+If you want to keep learning about IoT, take a look at the link below where you can learn how to do something similar to what you just did but replacing your Android device by a single-board IoT device.
+
+## Related links
+
+* [Analyze IoT ESP8266 sensor data](https://developer.ibm.com/tutorials/connect-a-soil-sensor-send-data-to-the-cloud-cfc-starter-kit-1/)

@@ -18,6 +18,8 @@ By the end of this tutorial you should be able to set up your own IoT hub for st
 * Application Starter Kits
 * Cloud Foundry applications
 
+![cloud-architecture](assets/cloud-architecture.png)
+
 ## Prerequisites
 
 * Android smartphone

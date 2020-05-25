@@ -1,6 +1,6 @@
 # Build an AI classifier using IBM Watson Studio
 
-In this tutorial, ...
+In this tutorial, you will populate a Cloudant database with a training dataset, create an IBM Watson Studio project, connect it to Cloudant and use the stored dataset to train and test a classifier model for shake detection.
 
 ## Store training data on Cloundant
 

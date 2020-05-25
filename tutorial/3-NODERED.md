@@ -8,7 +8,7 @@ In this section, you will create a [Node-RED](https://nodered.org/) app using [I
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **Create resource +** in the top right corner.
-1. In the **Software** menu on the left, select the **Web and Application** category.
+1. Open the **Software** menu on the left, then select the **Web and Application** category.
 1. Click the **Node-RED app** card and then the **Get started** button in the bottom of the page.
 1. Select the following options and click **Create**.
     * *Region*: Choose the one closest to your location.

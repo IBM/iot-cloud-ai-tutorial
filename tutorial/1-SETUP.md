@@ -28,7 +28,6 @@ In this section, you will install the [IoTool](https://iotool.io/) app and its e
 1. On your Android phone, open the **Play Store** app, search for **"IoTool"** and install the following apps:
     * [IoTool - Internet of Things (IoT) sensor platform](https://play.google.com/store/apps/details?id=io.senlab.iotoolapp)
     * [IoTool IBM Watson Cloud](https://play.google.com/store/apps/details?id=io.senlab.iotool.extension.ibmwatsoncloud)
-    * [IoTool Device Sensors](https://play.google.com/store/apps/details?id=io.senlab.iotool.serviceandroid)
 1. Open the **IoTool** app and choose **allow** for every question it asks.
 1. Familiarize yourself with the app by following the on-screen tutorial.
 1. On the main app screen, where a 2x2 grid shows **AccelX**, **AccelY** and **AccelZ**, press the **Play** icon (triangle) on the top right to start a measurement. Move your phone and observe the numbers.

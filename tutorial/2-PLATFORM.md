@@ -69,7 +69,7 @@ In this section, you will stream sensor data from your Android device to the clo
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
-1. Expand the **Services** menu and click the name of the entry whose **Offering** reads `Internet of Things Platform`.
+1. Expand the **Services** menu and click the name of the entry whose **Product** reads `Internet of Things Platform`.
     * *Note*: Do **not** click the **Cloud Foundry services** entry with the :link: icon after its name. This one is just an *alias* to the real **Service** entry.
 1. In the next screen, click **Launch** to open the IBM Watson IoT Platform.
 1. In the **Browse Devices** screen, check if the status of your device is **Connected**.

@@ -61,7 +61,7 @@ The `iot-2/evt/accel/fmt/json` MQTT topic string follows the format expected by 
 * `evt` stands for *event* and represents the MQTT message type. There are two types of message: **events** and **commands**. In a nutshell, *events* are messages about something that happened in the past and *commands* are messages that trigger an action that should happen in the future.
 * `accel` is the event ID string. This could be any string, but we chose `accel` because we are streaming *acceleration* data.
 * `fmt` stands for **format**.
-* `json` is the **format string**, which means that the message will be formatted in JSON.
+* `json` is the **format string**, which means that the message will be formatted as a JSON.
 
 ## Monitor sensor data in the platform
 

@@ -27,7 +27,7 @@ In this section, you will connect the recently deployed [Cloud Foundry](https://
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
-1. Expand the **Cloud Foundry apps** menu and click the name of the entry whose **Offering** reads `SDK for Node.js™`.
+1. Expand the **Cloud Foundry apps** menu and click the name of the entry whose **Product** reads `SDK for Node.js™`.
 1. Go to the **Connections** tab in the left side menu and click the **Create connection +** button in the top right corner.
 1. Locate the **Internet of Things Platform** entry and click the **Connect** button to the right.
 1. In the new screen, click **Connect** to accept the automatic generation of a new API Key.

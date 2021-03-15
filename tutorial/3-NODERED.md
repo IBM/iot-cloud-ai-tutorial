@@ -29,12 +29,12 @@ In this section, you will connect the recently deployed [Cloud Foundry](https://
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
 1. Expand the **Cloud Foundry apps** menu and click the name of the entry whose **Product** reads `SDK for Node.js™`.
 1. Go to the **Connections** tab in the left side menu and click the **Create connection +** button in the top right corner.
-1. Locate the **Internet of Things Platform** entry and click the **Connect** button to the right.
+1. Select the **Internet of Things Platform** entry and click **Next** at the bottom right corner.
 1. In the new screen, click **Connect** to accept the automatic generation of a new API Key.
-1. In the **Restage App** screen click the **Restage** button to reload the app with the new configuration.
+1. In the **Restage App** pop-up window, click the **Restage** button to reload the app with the new configuration.
 1. Wait until the marker in the top center turns green and reads **Running**.
-1. Go to the **Runtime** tab in the left side menu and click **Environment variables** in the centre of the screen.
-1. In the **VCAP_SERVICES** text box, you will find a big JSON object with two smaller objects (`iotf-service` and `cloudantNoSQLDB`), each one with their own `credentials` object.
+1. Go to the **Runtime** tab in the left side menu and select the **Environment variables** tab in the centre of the screen.
+1. Click the 👁️ icon to show the **`VCAP_SERVICES`** content and you will find a big JSON object with two smaller objects (`iotf-service` and `cloudantNoSQLDB`), each one with their own `credentials` object.
 1. Look for the `credentials` object inside `iotf-service` and take note of its contents. You may copy and paste it somewhere else or **Export** the full JSON to a file.
 1. The `credentials` object in `iotf-service` should have, at least, the following fields:
 

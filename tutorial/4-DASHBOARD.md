@@ -8,7 +8,7 @@ In this section, you will create a live dashboard that will display the accelera
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
-1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
+1. Expand the **Apps** menu and click the name of the entry whose **Product** reads `Cloud Application`.
 1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
 1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
 1. Click the **Hamburger** icon (three horizontal lines) in the top right corner and pick **Manage palette**.
@@ -90,7 +90,7 @@ In this section, you will add linear acceleration data to the live dashboard. Yo
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
-1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
+1. Expand the **Apps** menu and click the name of the entry whose **Product** reads `Cloud Application`.
 1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
 1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
 1. In the **Flow 1** tab, drag the cursor to select the **4 nodes** below.
@@ -137,7 +137,7 @@ In this section, you will add a rudimentary shake detection feature to the dashb
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
-1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
+1. Expand the **Apps** menu and click the name of the entry whose **Product** reads `Cloud Application`.
 1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
 1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
 1. In the node menu on the left of the **Flow 1** tab, locate the `change` node under **Function**.

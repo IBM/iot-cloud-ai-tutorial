@@ -13,24 +13,24 @@ In this section, you will create a live dashboard that will display the accelera
 1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
 1. Click the **Hamburger** icon (three horizontal lines) in the top right corner and pick **Manage palette**.
 1. Go to the **Install** tab and search for `dashboard`.
-1. Find the `node-red-dashboard` package and click the **Install** button to the right. Confirm the installation by clicking **Install** again.
+1. Find the `node-red-dashboard` package and click the **Install** button to the right. Confirm the installation by clicking **Install** again in the pop-up screen.
 1. Close the window to return to the **Flow 1** editor tab.
 1. In the node menu on the left, locate the `change` node under **Function**.
 1. Drag and drop the `change` node to the editor tab.
 1. Double-click the `change` node to open its configuration window.
 1. In the **Properties** tab of the **Edit change node** window, enter the information below. To add new rules, click the `+ add` button in the bottom left of the window.
     * *Name*: `Extract acceleration X`.
-    * *Rule 1*: Set (msg) `payload` to (msg) `payload.d.AccelerometerX@Device`.
+    * *Rule 1*: Set (msg) `payload` to (msg) `payload.d.AccelerometerX@StarterSensor`.
     * *Rule 2*: Set (msg) `topic` to (string) `X`.
 1. Click **Done** to return to the flow editor.
 1. Drag and drop another `change` node and fill it with the configuration below.
     * *Name*: `Extract acceleration Y`.
-    * *Rule 1*: Set (msg) `payload` to (msg) `payload.d.AccelerometerY@Device`.
+    * *Rule 1*: Set (msg) `payload` to (msg) `payload.d.AccelerometerY@StarterSensor`.
     * *Rule 2*: Set (msg) `topic` to (string) `Y`.
 1. Click **Done** to return to the flow editor.
 1. Drag and drop another `change` node and fill it with the configuration below.
     * *Name*: `Extract acceleration Z`.
-    * *Rule 1*: Set (msg) `payload` to (msg) `payload.d.AccelerometerZ@Device`.
+    * *Rule 1*: Set (msg) `payload` to (msg) `payload.d.AccelerometerZ@StarterSensor`.
     * *Rule 2*: Set (msg) `topic` to (string) `Z`.
 1. Click **Done** to return to the flow editor.
 1. In the node menu on the left, locate the `chart` node under **Dashboard**.
@@ -43,9 +43,9 @@ In this section, you will create a live dashboard that will display the accelera
     * *legend*: `Show`.
     * *Name*: `Accelerometer`.
 1. Click the :pencil2: icon (pencil) next to the **Group** options.
-1. In the **Edit dashboard group node** window, fill the *Name* field with `Acceleration` and click the :pencil2: icon (pencil) next to the **Tab** options.
-1. In the **Edit dashboard tab node** window, fill the *Name* field with `Acceleration dashboard`.
-1. Click **Update** twice to close these windows and return to **Edit chart node**. Click **Done** to return to the flow editor.
+1. In the **Add new dashboard group config node** window, fill the *Name* field with `Acceleration` and click the :pencil2: icon (pencil) next to the **Tab** options.
+1. In the **Add new dashboard tab config node** window, fill the *Name* field with `Acceleration dashboard`.
+1. Click **Add** twice to close these windows and return to **Edit chart node**. Click **Done** to return to the flow editor.
 1. In the node menu on the left, locate the `inject` node under **Common**.
 1. Drag and drop the `inject` node to the editor tab.
 1. Double-click the `inject` node to open its configuration window.

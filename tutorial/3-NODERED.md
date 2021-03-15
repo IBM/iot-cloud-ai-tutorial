@@ -9,17 +9,17 @@ In this section, you will create a [Node-RED](https://nodered.org/) app using [I
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **Create resource +** in the top right corner.
 1. Open the **Software** menu on the left, then select the **Starter kits** software category.
-1. Click the **Node-RED app** card and then the **Get started** button in the bottom of the page.
+1. Click the **Node-RED App** card and then the **Get started** button in the bottom of the page.
 1. Select the following options and click **Create**.
     * *Region*: Choose the one closest to your location.
     * *Plan*: Lite.
 1. Wait for the provision of the Cloudant service to finish.
-1. In the **App details** tab, click **Deploy your app** to configure the Continuous Delivery feature.
+1. In the **Deployment Automation** card, click the **Deploy your app** button to configure the Continuous Delivery feature.
 1. Choose **IBM Cloud Foundry** as deployment target.
 1. Click the **New +** button and then **OK** to create an API key for your app.
-1. Set the **Region** to the one closest to your location.
-1. Click **Create** in the top right corner and wait while the code is deployed.
-1. When the **Status** field in the Delivery Pipeline card reads **Success**, the deployment is done.
+1. Set the **Region** to the one closest to your location and hit **Next**.
+1. In the next screen, click **Create** and wait while the code is deployed.
+1. When the **Status** field in the **Deployment Automation** card reads **Success**, the deployment is finished.
 
 ## Connect Node-RED app to IBM Watson IoT Platform
 

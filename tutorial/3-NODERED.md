@@ -59,7 +59,7 @@ In this section, you will develop a simple application using the Node-RED web ID
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
 1. Expand the **Apps** menu and click the name of the entry whose **Product** reads `Cloud Application`.
-1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
+1. In the **App details** screen, click the **App URL** link to open your Node-RED app.
 1. Follow the instructions to protect your app from unwanted edits by defining a `username / password` pair. Click **Finish** when you are done.
     * *Note*: Write down this `username / password` pair. You will need it in the future.
 1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
@@ -76,11 +76,11 @@ In this section, you will develop a simple application using the Node-RED web ID
 1. Click the :pencil2: icon (pencil) next to **TLS Configuration** and fill the next screen with the information below.
     * *Verify server certificate*: `ON`.
     * *Server Name*: `ORG_ID.messaging.internetofthings.ibmcloud.com`, as in `credentials.mqtt_host`.
-1. Click **Update** to close this window and return to the previous one.
+1. Click **Add** to close this window and return to the previous one.
 1. Go to the **Security** tab and fill the fields with the information retrieved from the `credentials` JSON object.
     * *Username*: `API_KEY`, as in `credentials.apiKey`.
     * *Password*: `API_TOKEN`, as in `credentials.apiToken`.
-1. Click **Update** to close this window and return to the previous one.
+1. Click **Add** to close this window and return to the previous one.
 1. Back to the **Properties** tab, fill the rest of the fields with the information below.
     * *Topic*: `iot-2/type/DEV_TYPE/id/DEV_ID/evt/accel/fmt/json`.
     * *QoS*: `2`.
@@ -104,23 +104,23 @@ In this section, you will test the simple application you just created. The appl
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
 1. Expand the **Apps** menu and click the name of the entry whose **Product** reads `Cloud Application`.
-1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
+1. In the **App details** screen, click the **App URL** link to open your Node-RED app.
 1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
 1. Click the :beetle: icon (bug) in the top right corner to open the **Debug** tab.
 1. On your Android phone, open the **IoTool** app.
 1. In the app dashboard (main screen), press the **Play** icon (triangle) on the top right to start a measurement.
 1. On the Node-RED editor screen, note the JSON objects appearing periodically in the **Debug** tab on the right.
 1. On your Android phone, press the **Stop** icon (square) on the top right to stop the measurement.
-1. Pick one JSON object and click the `>` icon to expand it and open its contents. You should see something similar to the example below.
+1. Pick one JSON object from the debug tab and click the `>` icon to expand it and open its contents. You should see something similar to the example below.
 
     ```JSON
     {
-        "topic":"iot-2/type/DEV_TYPE/id/DEV_ID/evt/accel/fmt/json",
+        "topic":"iot-2/type/android/id/phone/evt/accel/fmt/json",
         "payload":{
             "d":{
-                "AccelerometerX@Device":-0.935272216796875,
-                "AccelerometerY@Device":5.72149658203125,
-                "AccelerometerZ@Device":7.0712890625,
+                "AccelerometerX@StarterSensor":-0.935272216796875,
+                "AccelerometerY@StarterSensor":5.72149658203125,
+                "AccelerometerZ@StarterSensor":7.0712890625,
                 "AccelerometerAbsolute@Device":9.14403555675171
             }
         },
@@ -137,14 +137,14 @@ In this section, you will test the simple application you just created. The appl
 1. On your Android phone, press the **Play** icon (triangle) on the top right to start a measurement.
 1. On the Node-RED editor screen, note the JSON objects appearing periodically in the **Debug** tab on the right.
 1. On your Android phone, press the **Stop** icon (square) on the top right to stop the measurement.
-1. Pick one JSON object and click the `>` icon to expand it and open its contents. You should see something similar to the example below.
+1. Pick one JSON object from the debug tab and click the `>` icon to expand it and open its contents. You should see something similar to the example below.
 
     ```JSON
     {
         "d":{
-            "AccelerometerX@Device":-0.935272216796875,
-            "AccelerometerY@Device":5.72149658203125,
-            "AccelerometerZ@Device":7.0712890625,
+            "AccelerometerX@StarterSensor":-0.935272216796875,
+            "AccelerometerY@StarterSensor":5.72149658203125,
+            "AccelerometerZ@StarterSensor":7.0712890625,
             "AccelerometerAbsolute@Device":9.14403555675171
         }
     }

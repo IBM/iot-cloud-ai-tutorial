@@ -58,7 +58,7 @@ In this section, you will develop a simple application using the Node-RED web ID
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
-1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
+1. Expand the **Apps** menu and click the name of the entry whose **Product** reads `Cloud Application`.
 1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
 1. Follow the instructions to protect your app from unwanted edits by defining a `username / password` pair. Click **Finish** when you are done.
     * *Note*: Write down this `username / password` pair. You will need it in the future.
@@ -103,7 +103,7 @@ In this section, you will test the simple application you just created. The appl
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
-1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
+1. Expand the **Apps** menu and click the name of the entry whose **Product** reads `Cloud Application`.
 1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
 1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
 1. Click the :beetle: icon (bug) in the top right corner to open the **Debug** tab.

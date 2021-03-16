@@ -144,16 +144,18 @@ In this section, your will load the sensor data from Cloudant into a [Pandas](ht
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
 1. Expand the **Services** menu and click the name of the entry whose **Product** reads `Watson Studio`.
 1. In the next screen, click **Get Started** to open the IBM Watson Studio.
-1. In the **Welcome** screen, click on your project name in the **Recently updated projects** card.
+1. In the **Welcome** screen, click on your project name in the **Recent projects** card.
 1. Go to the **Assets** tab, and click the name of your notebook in the **Notebooks** card.
 1. In the notebook visualisation screen, click the :pencil2: icon (pencil) in the top horizontal bar to enable editing.
 1. In an empty cell, paste and execute (with `Shift+Enter`) the Python code below to install the [SQL-Cloundant Connector](https://developer.ibm.com/clouddataservices/docs/ibm-data-science-experience/integrate/use-python-notebook-to-load-cloudant-data-into-spark/).
 
     ```Python
+    !pip install --upgrade pixiedust
     import pixiedust
-    pixiedust.installPackage("org.apache.bahir:spark-sql-cloudant_2.11:0")
+    pixiedust.installPackage("org.apache.bahir:spark-sql-cloudant_2.11:2.3.3")
     ```
 
+1. After successfully installing `pixiedust` and `spark-sql-cloudant`, you will be asked to restart the kernel by accesing **Kernel** in the top menu and selecting **Restart**.
 1. In an empty cell, paste and execute the Python code below to instantiate and start a Spark session.
 
     ```Python

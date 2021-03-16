@@ -118,9 +118,9 @@ In this section, you will test the simple application you just created. The appl
         "topic":"iot-2/type/android/id/phone/evt/accel/fmt/json",
         "payload":{
             "d":{
-                "AccelerometerX@StarterSensor":-0.935272216796875,
-                "AccelerometerY@StarterSensor":5.72149658203125,
-                "AccelerometerZ@StarterSensor":7.0712890625,
+                "AccelerometerX@Device":-0.935272216796875,
+                "AccelerometerY@Device":5.72149658203125,
+                "AccelerometerZ@Device":7.0712890625,
                 "AccelerometerAbsolute@Device":9.14403555675171
             }
         },
@@ -142,9 +142,9 @@ In this section, you will test the simple application you just created. The appl
     ```JSON
     {
         "d":{
-            "AccelerometerX@StarterSensor":-0.935272216796875,
-            "AccelerometerY@StarterSensor":5.72149658203125,
-            "AccelerometerZ@StarterSensor":7.0712890625,
+            "AccelerometerX@Device":-0.935272216796875,
+            "AccelerometerY@Device":5.72149658203125,
+            "AccelerometerZ@Device":7.0712890625,
             "AccelerometerAbsolute@Device":9.14403555675171
         }
     }

@@ -20,17 +20,17 @@ In this section, you will create a live dashboard that will display the accelera
 1. Double-click the `change` node to open its configuration window.
 1. In the **Properties** tab of the **Edit change node** window, enter the information below. To add new rules, click the `+ add` button in the bottom left of the window.
     * *Name*: `Extract acceleration X`.
-    * *Rule 1*: Set (msg) `payload` to (msg) `payload.d.AccelerometerX@StarterSensor`.
+    * *Rule 1*: Set (msg) `payload` to (msg) `payload.d.AccelerometerX@Device`.
     * *Rule 2*: Set (msg) `topic` to (string) `X`.
 1. Click **Done** to return to the flow editor.
 1. Drag and drop another `change` node and fill it with the configuration below.
     * *Name*: `Extract acceleration Y`.
-    * *Rule 1*: Set (msg) `payload` to (msg) `payload.d.AccelerometerY@StarterSensor`.
+    * *Rule 1*: Set (msg) `payload` to (msg) `payload.d.AccelerometerY@Device`.
     * *Rule 2*: Set (msg) `topic` to (string) `Y`.
 1. Click **Done** to return to the flow editor.
 1. Drag and drop another `change` node and fill it with the configuration below.
     * *Name*: `Extract acceleration Z`.
-    * *Rule 1*: Set (msg) `payload` to (msg) `payload.d.AccelerometerZ@StarterSensor`.
+    * *Rule 1*: Set (msg) `payload` to (msg) `payload.d.AccelerometerZ@Device`.
     * *Rule 2*: Set (msg) `topic` to (string) `Z`.
 1. Click **Done** to return to the flow editor.
 1. In the node menu on the left, locate the `chart` node under **Dashboard**.
@@ -102,15 +102,15 @@ In this section, you will add linear acceleration data to the live dashboard. Yo
 1. Press the keyboard shortcut associated with **Paste** in your operational system (`Ctrl+V` or `Cmd+V`). Move your cursor to place them in an empty area and confirm with a mouse click. A pop-down message will confirm that those 4 nodes were imported successfully.
 1. Double-click the duplicated **Extract acceleration X** node to open its configuration window. In the **Properties** tab of the **Edit change node** window, **replace** the contents mentioned below and **keep** the contents of the unmentioned fields.
     * *Name*: `Extract linear acceleration X`.
-    * *Rule 1*: (msg) `payload.d.LinearAccelerationX@StarterSensor`.
+    * *Rule 1*: (msg) `payload.d.LinearAccelerationX@Device`.
 1. Click **Done** to return to the flow editor.
 1. Double-click the duplicated **Extract acceleration Y** node to open its configuration window. In the **Properties** tab of the **Edit change node** window, **replace** the contents mentioned below and **keep** the contents of the unmentioned fields.
     * *Name*: `Extract linear acceleration Y`.
-    * *Rule 1*: (msg) `payload.d.LinearAccelerationY@StarterSensor`.
+    * *Rule 1*: (msg) `payload.d.LinearAccelerationY@Device`.
 1. Click **Done** to return to the flow editor.
 1. Double-click the duplicated **Extract acceleration Z** node to open its configuration window. In the **Properties** tab of the **Edit change node** window, **replace** the contents mentioned below and **keep** the contents of the unmentioned fields.
     * *Name*: `Extract linear acceleration Z`.
-    * *Rule 1*: (msg) `payload.d.LinearAccelerationZ@StarterSensor`.
+    * *Rule 1*: (msg) `payload.d.LinearAccelerationZ@Device`.
 1. Click **Done** to return to the flow editor.
 1. Double-click the duplicated **Accelerometer** node to open its configuration window. In the **Properties** tab of the **Edit chart node** window, **replace** the contents mentioned below and **keep** the contents of the unmentioned fields.
     * *Label*: `Linear Accelerometer [m/s^2]`.

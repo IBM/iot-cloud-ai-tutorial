@@ -79,9 +79,9 @@ In this section, you will stream sensor data from your Android device to the clo
     ```JSON
     {
         "d": {
-            "AccelerometerX@StarterSensor": 0.8376312255859375,
-            "AccelerometerY@StarterSensor": -0.297119140625,
-            "AccelerometerZ@StarterSensor": 9.83221435546875,
+            "AccelerometerX@Device": 0.8376312255859375,
+            "AccelerometerY@Device": -0.297119140625,
+            "AccelerometerZ@Device": 9.83221435546875,
             "AccelerometerAbsolute@Device": 9.87230190916425
             }
     }

@@ -58,7 +58,7 @@ In this section, you will create a Node-RED flow that stores the measured accele
 1. On your Android phone, open the **IoTool** app.
 1. Place your phone horizontally on a flat surface, with the screen poiting upwards.
 1. In the app main screen, press the **Play** icon (triangle) on the top right to start a measurement.
-1. Let the experiment running for **60 seconds**.
+1. Let the experiment running for **120 seconds**.
 1. On your Android phone, press the **Stop** icon (square) on the top right to stop the measurement.
 
 ### Store class `1` examples in the training database
@@ -69,7 +69,7 @@ In this section, you will create a Node-RED flow that stores the measured accele
 1. Click the **Deploy** button in the top right corner.
 1. On your Android phone, open the **IoTool** app.
 1. In the app main screen, press the **Play** icon (triangle) on the top right to start a measurement.
-1. Shake your phone vigorously for **60 seconds**.
+1. Shake your phone vigorously for **120 seconds**.
 1. On your Android phone, press the **Stop** icon (square) on the top right to stop the measurement.
 
 ### Reset the training database
@@ -159,6 +159,7 @@ In this section, your will load the sensor data from Cloudant into a [Pandas](ht
 1. In an empty cell, paste and execute the Python code below to instantiate and start a Spark session.
 
     ```Python
+    import pixiedust
     from pyspark.sql import SparkSession
     spark = SparkSession.builder.getOrCreate()
     ```
@@ -181,22 +182,16 @@ In this section, your will load the sensor data from Cloudant into a [Pandas](ht
     * *Note*: It is desirable to have approximately the same number of entries for each class.
 
     ```Python
-    spark.sql('select class, count(class) from df group by class').show()
     df = readDataFrameFromCloudant('training')
     df.createOrReplaceTempView('df')
+    df = df.dropna()
+    spark.sql('select class, count(class) from df group by class').show()
     ```
 
 1. In an empty cell, paste and execute the Python code below to display the dataset contents.
 
     ```Python
-    import pixiedust
     display(df)
-    ```
-
-1. Use the **Search table** field to search for `NaN`s. In case you find any, execute the Python code below to remove them from the dataframe.
-
-    ```Python
-    df = df.dropna()
     ```
 
 1. In an empty cell, paste and execute the Python code below to import the machine learning libraries.

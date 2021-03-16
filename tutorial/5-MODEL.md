@@ -19,8 +19,7 @@ In this section, you will create a Node-RED flow that stores the measured accele
 1. Double-click the `change` node to open its configuration window.
 1. In the **Properties** tab of the **Edit change node** window, enter the information below. To add new rules, click the `+ add` button in the bottom left of the window.
     * *Name*: `Build complete JSON object`.
-    * *Rule 1*: Set (msg) `payload.class` to (number) `0`.
-    * *Rule 2*: Set (msg) `payload` to the following (expression) content
+    * *Rule 1*: Set (msg) `payload` to the following (expression) content
 
         ```Javascript
         msg.payload.{
@@ -34,6 +33,8 @@ In this section, you will create a Node-RED flow that stores the measured accele
             "a" : d."AccelerometerAbsolute@Device"
         }
         ```
+
+    * *Rule 2*: Set (msg) `payload.class` to (number) `0`.
 
 1. Click **Done** to return to the flow editor.
 1. In the node menu on the left, locate the `debug` node under **Common**.

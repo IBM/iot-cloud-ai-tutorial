@@ -102,15 +102,15 @@ In this section, you will add linear acceleration data to the live dashboard. Yo
 1. Press the keyboard shortcut associated with **Paste** in your operational system (`Ctrl+V` or `Cmd+V`). Move your cursor to place them in an empty area and confirm with a mouse click. A pop-down message will confirm that those 4 nodes were imported successfully.
 1. Double-click the duplicated **Extract acceleration X** node to open its configuration window. In the **Properties** tab of the **Edit change node** window, **replace** the contents mentioned below and **keep** the contents of the unmentioned fields.
     * *Name*: `Extract linear acceleration X`.
-    * *Rule 1*: (msg) `payload.d.LinearAccelerationX@Device`.
+    * *Rule 1*: (msg) `payload.d.LinearAccelerationX@StarterSensor`.
 1. Click **Done** to return to the flow editor.
 1. Double-click the duplicated **Extract acceleration Y** node to open its configuration window. In the **Properties** tab of the **Edit change node** window, **replace** the contents mentioned below and **keep** the contents of the unmentioned fields.
     * *Name*: `Extract linear acceleration Y`.
-    * *Rule 1*: (msg) `payload.d.LinearAccelerationY@Device`.
+    * *Rule 1*: (msg) `payload.d.LinearAccelerationY@StarterSensor`.
 1. Click **Done** to return to the flow editor.
 1. Double-click the duplicated **Extract acceleration Z** node to open its configuration window. In the **Properties** tab of the **Edit change node** window, **replace** the contents mentioned below and **keep** the contents of the unmentioned fields.
     * *Name*: `Extract linear acceleration Z`.
-    * *Rule 1*: (msg) `payload.d.LinearAccelerationZ@Device`.
+    * *Rule 1*: (msg) `payload.d.LinearAccelerationZ@StarterSensor`.
 1. Click **Done** to return to the flow editor.
 1. Double-click the duplicated **Accelerometer** node to open its configuration window. In the **Properties** tab of the **Edit chart node** window, **replace** the contents mentioned below and **keep** the contents of the unmentioned fields.
     * *Label*: `Linear Accelerometer [m/s^2]`.

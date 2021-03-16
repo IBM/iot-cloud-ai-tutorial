@@ -181,16 +181,22 @@ In this section, your will load the sensor data from Cloudant into a [Pandas](ht
     * *Note*: It is desirable to have approximately the same number of entries for each class.
 
     ```Python
+    spark.sql('select class, count(class) from df group by class').show()
     df = readDataFrameFromCloudant('training')
     df.createOrReplaceTempView('df')
-    spark.sql('select class, count(class) from df group by class').show()
     ```
 
 1. In an empty cell, paste and execute the Python code below to display the dataset contents.
-    * *Note*: Use the **Search table** text field to search for `NaN`.
 
     ```Python
+    import pixiedust
     display(df)
+    ```
+
+1. Use the **Search table** field to search for `NaN`s. In case you find any, execute the Python code below to remove them from the dataframe.
+
+    ```Python
+    df = df.dropna()
     ```
 
 1. In an empty cell, paste and execute the Python code below to import the machine learning libraries.

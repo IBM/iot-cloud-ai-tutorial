@@ -8,7 +8,7 @@ In this section, you will create a Node-RED flow that stores the measured accele
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
-1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
+1. Expand the **Apps** menu and click the name of the entry whose **Product** reads `Cloud Application`.
 1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
 1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
 1. In the **Flow 1** tab, click the `mqtt in` node called **Subscribe to MQTT event** and press the keyboard shortcut associated with **Copy** in your operational system (`Ctrl+C` or `Cmd+C`). A pop-up message will confirm that 1 node was copied successfully.
@@ -77,7 +77,7 @@ In this section, you will create a Node-RED flow that stores the measured accele
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
-1. Expand the **Services** menu and click the name of the entry whose **Offering** reads `Cloudant`.
+1. Expand the **Services** menu and click the name of the entry whose **Product** reads `Cloudant`.
     * *Note*: Do **not** click the **Cloud Foundry services** entry with the :link: icon after its name. This one is just an *alias* to the real **Service** entry.
 1. In the next screen, click **Launch Cloundant Dashboard**.
 1. In the **Databases** screen, locate the `training` database and click the rightmost trashbin icon in the **Actions** column.
@@ -116,7 +116,7 @@ In this section, you will create a service credential to allow your IBM Watson S
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
-1. Expand the **Services** menu and click the name of the entry whose **Offering** reads `Cloudant`.
+1. Expand the **Services** menu and click the name of the entry whose **Product** reads `Cloudant`.
     * *Note*: Do **not** click the **Cloud Foundry services** entry with the :link: icon after its name. This one is just an *alias* to the real **Service** entry.
 1. In the next screen, choose **Service credentials** from the menu on the left side.
 1. In the **Service credentials** window, click the **New credential +** button.
@@ -140,7 +140,7 @@ In this section, your will load the sensor data from Cloudant into a [Pandas](ht
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
-1. Expand the **Services** menu and click the name of the entry whose **Offering** reads `Watson Studio`.
+1. Expand the **Services** menu and click the name of the entry whose **Product** reads `Watson Studio`.
 1. In the next screen, click **Get Started** to open the IBM Watson Studio.
 1. In the **Welcome** screen, click on your project name in the **Recently updated projects** card.
 1. Go to the **Assets** tab, and click the name of your notebook in the **Notebooks** card.
@@ -241,7 +241,7 @@ In this section, you will translate the trained classifier model into a [Javascr
 
 1. Log in to [IBM Cloud](https://cloud.ibm.com/).
 1. Click **View all** in the **Resource summary** card to open your [resource list](https://cloud.ibm.com/resources).
-1. Expand the **Apps** menu and click the name of the entry whose **Offering** reads `Cloud Application`.
+1. Expand the **Apps** menu and click the name of the entry whose **Product** reads `Cloud Application`.
 1. In the **App details** screen, click the **Visit App URL** link to open your Node-RED app.
 1. In the Node-RED welcome screen, click the **Go to your Node-RED flow editor** and provide your login credentials to open the web IDE.
 1. In the **Flow 2** tab, delete the connection between the `change` node called **Build complete JSON object** and the `cloudant out` node called **Training dataset**. This will prevent the next measurements from being stored in the Cloudant databse.

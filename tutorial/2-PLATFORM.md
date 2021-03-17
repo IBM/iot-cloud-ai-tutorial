@@ -41,16 +41,16 @@ In this section, you will configure your Android phone to connect to your IoT Pl
 1. Make sure the **Use cloud**, **Send data** and **Sync after session** options are `ON`.
 1. Go to **Select cloud service** and pick **IBM Watson IoT** from the list.
 1. Open the **IBM Watson IoT Settings** and fill in the information below.
-    * *Send interval*: `1s`.
-    * *Hostname*: `ssl://ORG_ID.messaging.internetofthings.ibmcloud.com`.
-    * *Port*: `8883`.
-    * *Username*: `AUTH_METHOD`.
-    * *Password*: `AUTH_TOKEN`.
-    * *Client identification*: `d:ORG_ID:DEV_TYPE:DEV_ID`.
-    * *Topic*: `iot-2/evt/accel/fmt/json`.
-    * *Clean session*: `ON`.
-    * *Quality of Service*: `2`.
-    * *Condensed*: `OFF`.
+    * *Send interval*: `1s`
+    * *Hostname*: `ssl://ORG_ID.messaging.internetofthings.ibmcloud.com`
+    * *Port*: `8883`
+    * *Username*: `AUTH_METHOD`
+    * *Password*: `AUTH_TOKEN`
+    * *Client identification*: `d:ORG_ID:DEV_TYPE:DEV_ID`
+    * *Topic*: `iot-2/evt/accel/fmt/json`
+    * *Clean session*: `ON`
+    * *Quality of Service*: `2`
+    * *Condensed*: `OFF`
 1. Return to the app dashboard (main screen) and press the **Play** icon (triangle) on the top right to start a measurement.
 
 ### Understanding your MQTT topic

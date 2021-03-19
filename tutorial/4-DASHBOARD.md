@@ -162,9 +162,9 @@ In this section, you will add a rudimentary shake detection feature to the dashb
 1. In the **Properties** tab of the **Edit gauge node** window, fill in the configuration with the information below.
     * *Label*: `Absolute acceleration`.
     * *Value format*: `{{value | number:2}}`.
-    * *Units*: `m^2/s`.
+    * *Units*: `m/s^2`.
     * *Range*: min `0`, max `20`.
-    * *Colour radient*: `red - green - red`.
+    * *Colour gradient*: `red - green - red`.
     * *Sectors*: `0 - 4.9 - 14.7 - 20`.
     * *Name*: `Absolute acceleration`.
 1. In the **Group** menu, select `Add new ui_group` and click the :pencil2: icon (pencil).
